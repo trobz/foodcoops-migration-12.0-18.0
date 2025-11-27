@@ -1,0 +1,561 @@
+##############################################################################
+## Odoo Repository
+##############################################################################
+
+./src/odoo:
+    defaults:
+        depth: 1
+    remotes:
+        odoo: https://github.com/odoo/odoo
+    target: odoo 12.0-target
+    merges:
+        - odoo 12.0
+
+##############################################################################
+## OpenUpgrade Repository
+##############################################################################
+
+./src/openupgrade:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: https://github.com/OCA/OpenUpgrade
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+
+##############################################################################
+## OCA Repositories
+##############################################################################
+    
+./src/OCA/web:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: https://github.com/OCA/web
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+    
+./src/OCA/server-tools:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: https://github.com/OCA/server-tools
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/product-attribute:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/product-attribute
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+        
+./src/OCA/product-variant:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/product-variant
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+        
+./src/OCA/partner-contact:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/partner-contact
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/sale-workflow:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/sale-workflow
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/sale-reporting:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/sale-reporting
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/purchase-workflow:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/purchase-workflow
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/purchase-reporting:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/purchase-reporting
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+# ./src/OCA/web:
+#     defaults:
+#         depth: 1
+#     remotes:
+#         OCA: git@github.com:OCA/web
+#     target: OCA 12.0-target
+#     merges:
+#         - OCA 12.0
+
+# ./src/OCA/website:
+#     defaults:
+#         depth: 1
+#     remotes:
+#         OCA: git@github.com:OCA/website
+#     target: OCA 12.0-target
+#     merges:
+#         - OCA 12.0
+
+./src/OCA/website-themes:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/website-themes
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/e-commerce:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/e-commerce
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/edi:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/edi
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/social:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/social
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/calendar:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/calendar
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/crm:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/crm
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/hr:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/hr
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/project:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/project
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/project-reporting:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/project-reporting
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/timesheet:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/timesheet
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+        
+./src/OCA/pos:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/pos
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+        
+./src/OCA/event:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/event
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/server-ux:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/server-ux
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+# ./src/OCA/server-tools:
+#     defaults:
+#         depth: 1
+#     remotes:
+#         OCA: git@github.com:OCA/server-tools
+#     target: OCA 12.0-target
+#     merges:
+#         - OCA 12.0
+
+./src/OCA/server-auth:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/server-auth
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/server-backend:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/server-backend
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/reporting-engine:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/reporting-engine
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/account-invoicing:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/account-invoicing
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/account-invoice-reporting:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/account-invoice-reporting
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/account-financial-reporting:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/account-financial-reporting
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/account-financial-tools:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/account-financial-tools
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/account-analytic:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/account-analytic
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/account-payment:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/account-payment
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/account-reconcile:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/account-reconcile
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/account-fiscal-rule:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/account-fiscal-rule
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/currency:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/currency
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/mis-builder:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/mis-builder
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/bank-statement-import:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/bank-statement-import
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+  
+./src/OCA/margin-analysis:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/margin-analysis
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+   
+./src/OCA/community-data-files:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/community-data-files
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/stock-logistics-workflow:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/stock-logistics-workflow
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+        
+./src/OCA/stock-logistics-warehouse:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/stock-logistics-warehouse
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/stock-logistics-reporting:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/stock-logistics-reporting
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/stock-logistics-barcode:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/stock-logistics-barcode
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/storage:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:thienvh332/storage
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0-bprt-storage_backend_sftp
+
+./src/OCA/queue:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/queue
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/connector:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/connector
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/intrastat-extrastat:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/intrastat-extrastat
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/l10n-france:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/l10n-france
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/addons/foodcoop-addons:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@gitlab.trobz.com:odoo/lalouve-production
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/addons/druidoo-addons:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:druidoo/druidoo-addons
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/addons/trobz-addons:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@gitlab.trobz.com:odoo/addons-trobz
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0-trobz
+
+# ./src/odoo:
+#     defaults:
+#         depth: 1
+#     remotes:
+#         OCA: git@gitlab.trobz.com:odoo/odoo
+#     target: OCA 12.0-target
+#     merges:
+#         - OCA 12.0
+
+./src/OCA/report-print-send:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/report-print-send
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+./src/OCA/server-env:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/server-env
+    target: OCA 12.0-target
+    merges:
+        - OCA 12.0
+
+# ./src/addons/vracoop-addons:
+#     defaults:
+#         depth: 1
+#     remotes:
+#         OCA: git@github.com:coopiteasy/cie-pos
+#     target: OCA 12.0-target
+#     merges:
+#         - OCA 12.0
+        
+# ./src/addons/novacode-addons:
+#     defaults:
+#         depth: 1
+#     remotes:
+#         OCA: git@github.com:novacode-nl/odoo-formio
+#     target: OCA 12.0-target
+#     merges:
+#         - OCA 12.0
+
+# ./src/addons/otsokop-addons:
+#     defaults:
+#         depth: 1
+#     remotes:
+#         OCA: git@gitlab.trobz.com:odoo-restricted/otsokop
+#     target: OCA 12.0-target
+#     merges:
+#         - OCA 12.0

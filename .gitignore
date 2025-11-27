@@ -1,0 +1,6 @@
+*.log
+*.xml
+*.po
+*.pot
+log/*.log
+postgres_data/
