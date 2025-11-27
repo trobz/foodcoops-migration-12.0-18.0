@@ -25,7 +25,7 @@ WHERE name IN (
     'account_invoice_merge',
     -- 'account_invoice_refund_option',
     'account_mass_reconcile',
-    'account_partner_journal',
+    -- 'account_partner_journal',
     'account_payment_confirm',
     -- 'account_payment_select_account',
     -- 'account_payment_term_restricted',
