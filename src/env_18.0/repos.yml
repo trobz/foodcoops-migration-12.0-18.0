@@ -17,13 +17,14 @@
 
 ./src/openupgrade:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: https://github.com/OCA/OpenUpgrade
-    target: OCA 18.0-target
+        trobz: git@github.com:trobz/OpenUpgrade.git
+    target: trobz merge-branch-foodcoop-18.0
     merges:
-        - OCA 18.0
-
+        - trobz 18.0
+        - trobz refs/pull/4/head
 
 ##############################################################################
 ## OCA Repositories
