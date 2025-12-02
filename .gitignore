@@ -2,5 +2,7 @@
 *.xml
 *.po
 *.pot
+*.pyc
+filestore/
 log/*.log
 postgres_data/
