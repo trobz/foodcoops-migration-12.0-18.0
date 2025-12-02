@@ -1,1 +1,242 @@
+account,Invoicing
+account_asset_management,Assets Management
+account_asset_management_xlsx,Account Asset Management xlsx
+account_bank_statement_import,Account Bank Statement Import
+account_bank_statement_import_caisse_epargne,Import CSV Bank Statement from Caisse d'Epargne
+account_bank_statement_import_ofx,Import OFX Bank Statement
+account_bank_statement_reconcile_option,Account Bank Statement Reconcile Options
+account_bank_statement_reconciliation_report,Account Bank Statement Summary
+account_cancel,Cancel Journal Entries
+account_check_deposit,Account Deposit in Bank
+account_coa_menu,Account - Chart of Accounts Menus
+account_export,Account Export
+account_facturx,Import Vendor Bills From XML
+account_financial_report,Account Financial Reports
+account_financial_report_custom,Account Financial Reports Custom
+accounting_pdf_reports,Odoo 12 Accounting PDF Reports
+account_invoice_refund_option,Account Invoice Refund Option
+account_mass_reconcile,Account Mass Reconcile
+account_partner_journal,Account Partner Journal
+account_payment_confirm,Account Payment Confirm
+account_payment_select_account,Account Payment - Select Account
+account_payment_term_restricted,Account Payment Terms - Customer / Supplier Restrictions
+account_product_fiscal_classification,Account Product - Fiscal Classification
+account_reconcile_pos_payments,Bank Auto Reconcille POS Payments
+account_tax_balance,Tax Balance
+account_voucher,Sale & Purchase Vouchers
+analytic,Analytic Accounting
+auditlog,Audit Log
+auth_signup,Signup
+auto_backup,Database Auto-Backup
+barcodes,Barcode
+barcodes_generator_abstract,Generate Barcodes (Abstract)
+barcodes_generator_partner,Generate Barcodes for Partners
+barcodes_generator_product,Generate Barcodes for Products
 base,Base
+base_automation,Automated Action Rules
+base_iban,IBAN Bank Accounts
+base_import,Base import
+base_import_security_group,Optional CSV import
+base_setup,Initial Setup Tools
+base_sparse_field,Sparse Fields
+base_technical_features,Technical features group
+base_vat,VAT Number Validation
+board,Dashboards
+bus,IM Bus
+calendar,Calendar
+calendar_sms,Calendar - SMS
+capital_subscription,Capital Subscription
+contacts,Contacts
+coop_account,Coop Account
+coop_account_check_deposit,Coop Account Check Deposit
+coop_account_product_fiscal_classification,Account Product - Fiscal Classification
+coop_asset,Coop - Asset
+coop_badge_reader,Coop Badge Reader
+coop_capital_certificate,Coop Capital Certificate
+coop_default_pricetag,Coop Default Price Tag
+coop_disable_product,Coop Limit Creation of Product
+coop_inventory,Coop - Inventory
+coop_inventory_recurrent,Coop - Inventory Recurrent
+coop_mass_mailing_contact,Mass Mailing - Contact
+coop_membership,Coop - Membership
+coop_membership_coop_amount,Show Coop Amount of Member
+coop_memberspace,Coop Memberspace
+coop_memberspace_cancelation,Coop Memberspace Cancelation
+coop_numerical_keyboard,Coop Numerical Keyboard
+coop_parental_leave,Coop - Parental Leave
+coop_point_of_sale,Coop - Point of Sale Custom views
+coop_print_badge,Coop - Print Badge
+coop_produce,Coop Produce
+coop_product_coefficient,Coop Product Coefficient
+coop_purchase,Coop Purchase
+coop_shift,Coop Shift
+coop_shift_maximum_seats,Shift: Maximum Available Seats
+coop_shit_counter_balance,Coop Shift - Balance Counter Event
+coop_stock,Coop - Stock
+custom_chaudron,Chaudron Custom
+custom_chaudron_member_register_form,Chaudron Custom > Membership Registration Form
+database_cleanup,Database cleanup
+date_range,Date Range
+decimal_precision,Decimal Precision Configuration
+delivery,Delivery Costs
+delivery_hs_code,Delivery HS Code
+digest,KPI Digests
+document,Attachments List and Document Indexation
+document_sidebar,Document Sidebar
+edi_purchase_base,EDI Purchase
+edi_purchase_config,EDI Config
+edi_purchase_diapar,EDI Purchase DIAPAR
+email_validation_check,Email Validation Check
+event,Events Organization
+event_sale,Events Sales
+fetchmail,Email Gateway
+field_image_preview,Widget image preview
+foodcoop_data_fr,Data for Foodcoop in France
+google_account,Google Users
+google_calendar,Google Calendar
+hr,Employees
+hr_maintenance,Maintenance - HR
+hr_skill,Skills Management
+http_routing,Web Routing
+iap,In-App Purchases
+im_livechat,Live Chat
+l10n_fr,France - Accounting
+l10n_fr_certification,France - VAT Anti-Fraud Certification (CGI 286 I-3 bis)
+l10n_fr_coop_default_pricetag,l10n fr Coop Default Price Tag
+l10n_fr_department,French Departments (Départements)
+l10n_fr_fec,France - FEC
+l10n_fr_fec_background,France - FEC Custom
+l10n_fr_fec_group_sale_purchase,France - FEC Group Sale Purchase
+l10n_fr_fec_oca,France - FEC
+l10n_fr_pos_cert,France - VAT Anti-Fraud Certification for Point of Sale (CGI 286 I-3 bis)
+l10n_fr_sale_closing,France - VAT Anti-Fraud Certification (CGI 286 I-3 bis) - Sale Closings
+l10n_fr_state,French States (Régions)
+l10n_generic_coa,Generic - Accounting
+link_tracker,Link Tracker
+mail,Discuss
+mail_template_active,Mail template active
+mail_template_conditional_attachment,Email Template Conditional Attachment
+maintenance,Maintenance
+mass_editing,Mass Editing
+mass_mailing,Email Marketing
+mass_mailing_access,Mass Mailing - Access Right
+mass_mailing_event,Mass mailing on attendees
+mass_mailing_sale,Mass mailing on sale orders
+mass_operation_abstract,Mass Operation Abstract
+mis_builder,MIS Builder
+partner_autocomplete,Partner Autocomplete
+partner_contact_birthdate,Contact's birthdate
+partner_contact_gender,Contact gender
+partner_contact_personal_information_page,Personal information page for contacts
+partner_validate_email,Partner - Validate Email
+payment,Payment Acquirer
+payment_transfer,Transfer Payment Acquirer
+point_of_sale,Point of Sale
+portal,Customer Portal
+pos_access_right,Point of Sale - Extra Access Right
+pos_automatic_cashdrawer,POS Automatic Cashdrawer
+pos_automatic_validation,POS Automatic Validation
+pos_barcode_rule_transform,Point of Sale - Barcode Rule Transform
+pos_cash_rounding,Point of Sale Cash Rounding
+pos_customer_required,Point of Sale Require Customer
+pos_empty_home,Point of Sale - Empty Home
+pos_mercury,Mercury Payment Services
+pos_order_line_removal,POS Order Line Removal
+pos_order_return,Point of Sale Order Return
+pos_order_return_scrap,Point of Sale Order Scrap
+pos_order_wait_save,POS Order Wait Save
+pos_payment_credit,Point of Sale Payment Credit
+pos_payment_terminal,POS Payment Terminal
+pos_payment_terminal_return,POS Payment Terminal Return
+pos_pricelist_selection_right,Point of Sale - Restrict Pricelists to Partner
+pos_price_to_weight,Point of Sale - Price to Weight
+pos_quick_logout,Point of Sale - Quick Logout
+pos_report_session_summary,POS report Session Summary
+pos_reprint,Point of Sale Receipt Reprinting
+pos_restrict_scan,POS Restrict Scanning Product
+pos_sale,pos_sale
+pos_search_improvement,POS Search Improvement
+pos_search_improvement_custom,POS Search Improvement Custom
+pos_ticket_send_by_mail,POS Receipt By Email
+pos_transfer_account,Point of Sale - Transfer Account
+procurement_jit,Just In Time Scheduling
+product,Products & Pricelists
+product_average_consumption,Product - Average Consumption
+product_history,Product - History
+product_history_for_cpo,Product History for CPO
+product_logistics_uom,Product logistics UoM
+product_print_category,Product - To Print
+product_to_scale_bizerba,Products - Send to Scales
+project,Project
+purchase,Purchase
+purchase_compute_order,Computed Purchase Order
+purchase_discount,Purchase order lines with discounts
+purchase_package_qty,Purchase - Package Quantity
+purchase_stock,Purchase Stock
+queue_job,Job Queue
+rating,Customer Rating
+repair,Repairs
+report_xlsx,Base report xlsx
+report_xlsx_helper,Report xlsx helpers
+resource,Resource
+res_partner_account_move_line,Res Partner Account Move Line
+sale,Sales
+sale_management,Sales
+sale_purchase,Sale Purchase
+sales_team,Sales Teams
+sale_stock,Sales and Warehouse Management
+scheduler_error_mailer,Scheduler Error Mailer
+sms,SMS gateway
+snailmail,Snail Mail
+snailmail_account,snailmail_account
+social_media,social_media
+stock,Inventory
+stock_account,WMS Accounting
+stock_inventory_preparation_filter,Extended Inventory Preparation Filters
+stock_inventory_valuation_report,Stock Inventory Valuation Report
+stock_scrap_origin,Stock Scrap Origin
+stock_scrap_product_report,Scrap Report
+theme_bootswatch,Bootswatch Theme
+uom,Units of measure
+utm,UTM Trackers
+web,Web
+web_diagram,Odoo Web Diagram
+web_dialog_size,Web Dialog Size
+web_editor,Web Editor
+web_environment_ribbon,Web Environment Ribbon
+web_export_view,Web Export Current View
+web_export_xlsx,Web Export XLSX
+web_favicon,Custom shortcut icon
+web_kanban_gauge,Gauge Widget for Kanban
+web_m2x_options,web_m2x_options
+web_settings_dashboard,Odoo Settings Dashboard
+web_sheet_full_width,Web Sheet Full Width
+website,Website
+website_category_publish,Website Category Publish
+website_form,Generic Form Controller
+website_form_project,Online Task Submission
+website_links,Link Tracker
+website_livechat,Website Live Chat
+website_mail,Website Mail
+website_mass_mailing,Newsletter Subscribe Button
+website_payment,Website Payment
+website_rating,Website Rating
+website_sale,eCommerce
+website_sale_category_description,eCommerce Category Descriptions
+website_sale_checkout_skip_payment,Website Sale Checkout Skip Payment
+website_sale_checkout_skip_payment_default,Skip Website Checkout Payment by Default
+website_sale_delivery,eCommerce Delivery
+website_sale_link_tracker,eCommerce Link Tracker
+website_sale_management,Website - Sales Management
+website_sale_product_sort,Website Sale Product Sort
+website_sale_require_login,Require login to checkout
+website_sale_stock,Product Availability
+website_sale_suggest_create_account,Suggest to create user account when buying
+website_snippet_product_category,Website Snippet Product Category
+website_theme_install,Website Theme Install
+web_tour,Tours
+web_unsplash,Unsplash Image Library
+web_widget_color,Web Widget Color
+web_widget_domain_editor_dialog,Web Widget Domain Editor Dialog
+web_widget_image_webcam,Web Widget - Image WebCam
+web_widget_image_webcam_portrait,Web Widget - Image WebCam - Portrait

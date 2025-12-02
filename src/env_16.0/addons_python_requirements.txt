@@ -1,1 +1,25 @@
 # Do NOT edit manually. Changes here will be overwritten by the command 'guess-requirement'
+
+# Required by the module(s): account_asset_management
+python-dateutil
+
+# Required by the module(s): auto_backup
+paramiko<4.0.0
+
+# Required by the module(s): auto_backup
+pysftp
+
+# Required by the module(s): auto_backup
+cryptography
+
+# Required by the module(s): barcodes_generator_abstract
+python-barcode
+
+# Required by the module(s): l10n_fr_fec_oca
+unidecode
+
+# Required by the module(s): queue_job
+requests
+
+# Required by the module(s): account_statement_import_ofx
+ofxparse
