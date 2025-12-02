@@ -1,1 +1,1 @@
-
+delete from ir_model_data where model='stock.picking.type' and res_id=6;
