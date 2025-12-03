@@ -6,8 +6,3 @@
 -- JOIN stock_move_line sml ON pp.id = sml.product_id
 -- WHERE pt.id = pp.product_tmpl_id
 --   AND pt.uom_id != sml.product_uom_id;
-
--- update catgory of Units to Weight
-UPDATE uom_uom
-SET category_id = (SELECT id FROM uom_category WHERE name->>'en_US' = 'Weight')
-WHERE name->>'en_US' = 'Units';
