@@ -442,14 +442,16 @@
 
 ./src/OCA/stock-logistics-workflow:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/stock-logistics-workflow
         trobz: git@github.com:trobz/stock-logistics-workflow.git
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-        
+        - OCA refs/pull/2159/head  # stock_scrap_product_report
+        - OCA refs/pull/2186/head  # scrap_reason_mandatory
+
 ./src/OCA/stock-logistics-warehouse:
     defaults:
         depth: 1
@@ -610,3 +612,12 @@
 #     target: trobz merge-branch-foodcoop-18.0
 #     merges:
 #         - OCA 18.0
+
+./src/others/foodcoop-project-addon:
+    defaults:
+        depth: 300
+    remotes:
+        trobz: git@gitlab.trobz.com:project/foodcoop-project-addon.git
+    target: trobz merge-branch-foodcoop-18.0
+    merges:
+        - trobz 18.0

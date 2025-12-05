@@ -29,3 +29,6 @@ ofxparse
 
 # Required by the module(s): server_action_mass_edit
 openupgradelib
+
+# Required by the module(s): l10n_fr_department
+unidecode
