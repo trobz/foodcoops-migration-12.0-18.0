@@ -4,7 +4,7 @@
 
 ./src/odoo:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         odoo: https://github.com/odoo/odoo
     target: odoo 18.0-target
@@ -32,7 +32,7 @@
     
 ./src/OCA/web:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: https://github.com/OCA/web
         trobz: git@github.com:trobz/web.git
@@ -42,7 +42,7 @@
     
 ./src/OCA/server-tools:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: https://github.com/OCA/server-tools
         trobz: git@github.com:trobz/server-tools.git
@@ -52,7 +52,7 @@
 
 ./src/OCA/product-attribute:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/product-attribute
         trobz: git@github.com:trobz/product-attribute.git
@@ -62,7 +62,7 @@
         
 ./src/OCA/product-variant:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/product-variant
         trobz: git@github.com:trobz/product-variant.git
@@ -72,7 +72,7 @@
         
 ./src/OCA/partner-contact:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/partner-contact
         trobz: git@github.com:trobz/partner-contact.git
@@ -82,7 +82,7 @@
 
 ./src/OCA/sale-workflow:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/sale-workflow
         trobz: git@github.com:trobz/sale-workflow.git
@@ -92,7 +92,7 @@
 
 ./src/OCA/sale-reporting:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/sale-reporting
         trobz: git@github.com:trobz/sale-reporting.git
@@ -102,7 +102,7 @@
 
 ./src/OCA/purchase-workflow:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/purchase-workflow
         trobz: git@github.com:trobz/purchase-workflow.git
@@ -112,7 +112,7 @@
 
 ./src/OCA/purchase-reporting:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/purchase-reporting
         trobz: git@github.com:trobz/purchase-reporting.git
@@ -122,7 +122,7 @@
 
 # ./src/OCA/web:
 #     defaults:
-#         depth: 1
+#         depth: 300
 #     remotes:
 #         OCA: git@github.com:OCA/web
 #         trobz: git@github.com:trobz/web.git
@@ -132,7 +132,7 @@
 
 # ./src/OCA/website:
 #     defaults:
-#         depth: 1
+#         depth: 300
 #     remotes:
 #         OCA: git@github.com:OCA/website
 #         trobz: git@github.com:trobz/web.git
@@ -142,7 +142,7 @@
 
 ./src/OCA/website-themes:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/website-themes
         trobz: git@github.com:trobz/website-themes.git
@@ -152,7 +152,7 @@
 
 ./src/OCA/e-commerce:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/e-commerce
         trobz: git@github.com:trobz/e-commerce.git
@@ -162,7 +162,7 @@
 
 ./src/OCA/edi:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/edi
         trobz: git@github.com:trobz/edi.git
@@ -172,7 +172,7 @@
 
 ./src/OCA/social:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/social
         trobz: git@github.com:trobz/social.git
@@ -182,7 +182,7 @@
 
 ./src/OCA/calendar:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/calendar
         trobz: git@github.com:trobz/calendar.git
@@ -192,7 +192,7 @@
 
 ./src/OCA/crm:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/crm
         trobz: git@github.com:trobz/crm.git
@@ -202,7 +202,7 @@
 
 ./src/OCA/hr:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/hr
         trobz: git@github.com:trobz/hr.git
@@ -212,7 +212,7 @@
 
 ./src/OCA/project:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/project
         trobz: git@github.com:trobz/project.git
@@ -222,7 +222,7 @@
 
 ./src/OCA/project-reporting:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/project-reporting
         trobz: git@github.com:trobz/project-reporting.git
@@ -232,7 +232,7 @@
 
 ./src/OCA/timesheet:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/timesheet
         trobz: git@github.com:trobz/timesheet.git
@@ -242,7 +242,7 @@
         
 ./src/OCA/pos:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/pos
         trobz: git@github.com:trobz/pos.git
@@ -252,7 +252,7 @@
         
 ./src/OCA/event:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/event
         trobz: git@github.com:trobz/event.git
@@ -262,7 +262,7 @@
 
 ./src/OCA/server-ux:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/server-ux
         trobz: git@github.com:trobz/server-ux.git
@@ -272,7 +272,7 @@
 
 # ./src/OCA/server-tools:
 #     defaults:
-#         depth: 1
+#         depth: 300
 #     remotes:
 #         OCA: git@github.com:OCA/server-tools
 #         trobz: git@github.com:trobz/server-tools.git
@@ -282,7 +282,7 @@
 
 ./src/OCA/server-auth:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/server-auth
         trobz: git@github.com:trobz/server-auth.git
@@ -292,7 +292,7 @@
 
 ./src/OCA/server-backend:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/server-backend
         trobz: git@github.com:trobz/server-backend.git
@@ -302,7 +302,7 @@
 
 ./src/OCA/reporting-engine:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/reporting-engine
         trobz: git@github.com:trobz/reporting-engine.git
@@ -312,7 +312,7 @@
 
 ./src/OCA/account-invoicing:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/account-invoicing
         trobz: git@github.com:trobz/account-invoicing.git
@@ -322,7 +322,7 @@
 
 ./src/OCA/account-invoice-reporting:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/account-invoice-reporting
         trobz: git@github.com:trobz/account-invoice-reporting.git
@@ -332,7 +332,7 @@
 
 ./src/OCA/account-financial-reporting:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/account-financial-reporting
         trobz: git@github.com:trobz/account-financial-reporting.git
@@ -342,7 +342,7 @@
 
 ./src/OCA/account-financial-tools:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/account-financial-tools
         trobz: git@github.com:trobz/account-financial-tools.git
@@ -352,7 +352,7 @@
 
 ./src/OCA/account-analytic:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/account-analytic
         trobz: git@github.com:trobz/account-analytic.git
@@ -362,7 +362,7 @@
 
 ./src/OCA/account-payment:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/account-payment
         trobz: git@github.com:trobz/account-payment.git
@@ -372,7 +372,7 @@
 
 ./src/OCA/account-reconcile:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/account-reconcile
         trobz: git@github.com:trobz/account-reconcile.git
@@ -382,7 +382,7 @@
 
 ./src/OCA/account-fiscal-rule:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/account-fiscal-rule
         trobz: git@github.com:trobz/account-fiscal-rule.git
@@ -392,7 +392,7 @@
 
 ./src/OCA/currency:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/currency
         trobz: git@github.com:trobz/currency.git
@@ -402,7 +402,7 @@
 
 ./src/OCA/mis-builder:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/mis-builder
         trobz: git@github.com:trobz/mis-builder.git
@@ -412,7 +412,7 @@
 
 ./src/OCA/bank-statement-import:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/bank-statement-import
         trobz: git@github.com:trobz/bank-statement-import.git
@@ -422,7 +422,7 @@
   
 ./src/OCA/margin-analysis:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/margin-analysis
         trobz: git@github.com:trobz/margin-analysis.git
@@ -432,7 +432,7 @@
    
 ./src/OCA/community-data-files:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/community-data-files
         trobz: git@github.com:trobz/community-data-files.git
@@ -454,7 +454,7 @@
 
 ./src/OCA/stock-logistics-warehouse:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/stock-logistics-warehouse
         trobz: git@github.com:trobz/logistics-warehouse.git
@@ -464,7 +464,7 @@
 
 ./src/OCA/stock-logistics-reporting:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/stock-logistics-reporting
         trobz: git@github.com:trobz/stock-logistics-reporting.git
@@ -474,7 +474,7 @@
 
 ./src/OCA/stock-logistics-barcode:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/stock-logistics-barcode
         trobz: git@github.com:trobz/stock-logistics-barcode.git
@@ -484,7 +484,7 @@
 
 ./src/OCA/storage:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/storage
         trobz: git@github.com:trobz/storage.git
@@ -494,7 +494,7 @@
 
 ./src/OCA/queue:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/queue
         trobz: git@github.com:trobz/queue.git
@@ -504,7 +504,7 @@
 
 ./src/OCA/connector:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/connector
         trobz: git@github.com:trobz/connector.git
@@ -514,7 +514,7 @@
 
 ./src/OCA/intrastat-extrastat:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/intrastat-extrastat
         trobz: git@github.com:trobz/intrastat-extrastat.git
@@ -524,7 +524,7 @@
 
 ./src/OCA/l10n-france:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/l10n-france
         trobz: git@github.com:trobz/l10n-france.git
@@ -534,7 +534,7 @@
 
 # ./src/addons/foodcoop-addons:
 #     defaults:
-#         depth: 1
+#         depth: 300
 #     remotes:
 #         OCA: git@gitlab.trobz.com:odoo/lalouve-production
 #         trobz: git@github.com:trobz/lalouve-production.git
@@ -544,7 +544,7 @@
 
 # ./src/addons/druidoo-addons:
 #     defaults:
-#         depth: 1
+#         depth: 300
 #     remotes:
 #         OCA: git@github.com:druidoo/druidoo-addons
 #         trobz: git@github.com:trobz/druidoo-addons.git
@@ -555,7 +555,7 @@
 # not found
 # ./src/addons/trobz-addons:
 #     defaults:
-#         depth: 1
+#         depth: 300
 #     remotes:
 #         OCA: git@gitlab.trobz.com:odoo/addons-trobz
 #         trobz: git@github.com:trobz/addons-trobz.git
@@ -565,7 +565,7 @@
 
 ./src/OCA/report-print-send:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/report-print-send
         trobz: git@github.com:trobz/report-print-send.git
@@ -575,7 +575,7 @@
 
 ./src/OCA/server-env:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         OCA: git@github.com:OCA/server-env
         trobz: git@github.com:trobz/server-env.git
@@ -585,7 +585,7 @@
 
 # ./src/addons/vracoop-addons:
 #     defaults:
-#         depth: 1
+#         depth: 300
 #     remotes:
 #         OCA: git@github.com:coopiteasy/cie-pos
 #         trobz: git@github.com:trobz/cie-pos.git
@@ -595,7 +595,7 @@
         
 # ./src/addons/novacode-addons:
 #     defaults:
-#         depth: 1
+#         depth: 300
 #     remotes:
 #         OCA: git@github.com:novacode-nl/odoo-formio
 #         trobz: git@github.com:trobz/odoo-formio.git
@@ -605,7 +605,7 @@
 
 # ./src/addons/otsokop-addons:
 #     defaults:
-#         depth: 1
+#         depth: 300
 #     remotes:
 #         OCA: git@gitlab.trobz.com:odoo-restricted/otsokop
 #         trobz: git@github.com:trobz/otsokop.git
