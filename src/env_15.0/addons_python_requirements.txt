@@ -10,7 +10,7 @@ pysftp
 cryptography==2.6.1
 
 # Required by the module(s): barcodes_generator_abstract
-python-barcode
+python-barcode==0.10.0
 
 # Required by the module(s): queue_job
 requests
