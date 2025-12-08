@@ -1,1 +1,2 @@
-delete from ir_model_data where model='stock.picking.type' and res_id=6;
+-- already handled in migration OCA 13.0/point_of_sale/migration/13.0.1.0.1/end-migration.py
+-- delete from ir_model_data where model='stock.picking.type' and res_id=6; #pos order picking type
