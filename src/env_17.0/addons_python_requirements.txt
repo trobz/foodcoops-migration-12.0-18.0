@@ -12,11 +12,8 @@ pysftp
 # Required by the module(s): auto_backup
 cryptography
 
-# Required by the module(s): base_view_inheritance_extension
-astor
-
 # Required by the module(s): barcodes_generator_abstract
-python-barcode==0.10.0
+python-barcode
 
 # Required by the module(s): queue_job
 requests
