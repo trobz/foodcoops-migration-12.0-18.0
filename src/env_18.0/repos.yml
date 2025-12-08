@@ -359,6 +359,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/850/head # product_analytic
 
 ./src/OCA/account-payment:
     defaults:

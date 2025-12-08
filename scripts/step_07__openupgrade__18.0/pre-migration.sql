@@ -125,7 +125,7 @@ WHERE name IN (
     'web_sheet_full_width',
     'web_widget_image_webcam',
     'web_widget_image_webcam_portrait',
-    'product_analytic'
+    -- 'product_analytic'
 );
 
 -- copy camptocamp upgrade tools: https://github.com/camptocamp/odoo-upgrade-tools/blob/main/odoo_upgrade_tools/odoo/%7B%7Bcookiecutter.odoo_dir%7D%7D/songs/migration_db/songs/generic/prepare_views_for_upgrade.sql
