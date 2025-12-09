@@ -114,7 +114,7 @@ WHERE name IN (
     'product_to_scale_bizerba',
     'purchase_compute_order',
     'purchase_compute_order_min_package',
-    'purchase_package_qty',
+    -- 'purchase_package_qty',
     -- 'res_partner_account_move_line',
     'stock_inventory_barcode',
     'stock_inventory_barcode_custom',
