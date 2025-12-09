@@ -463,6 +463,8 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/2455/head  # product_average_consumption
+        - OCA refs/pull/2456/head  # product_history
 
 ./src/OCA/stock-logistics-reporting:
     defaults:
