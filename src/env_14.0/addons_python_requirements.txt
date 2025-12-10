@@ -1,19 +1,80 @@
-# Do NOT edit manually. Changes here will be overwritten by the command 'guess-requirement'
+# Mandatory library used in all odoo-openupgrade-wizard
+# Note: As the openupgradelib is not allways up to date in pypi,
+# we use the github master url.
+git+https://github.com/OCA/openupgradelib@master#egg=openupgradelib
 
-# Required by the module(s): auto_backup
+# Library used to run generate-module-analysis command
+# dependencies of the module OCA/server-tools 'upgrade_analysis'
+odoorpc
+mako
+pyjwt
+# From addons/trobz-addons/requirements.txt
+safe-logger==1.6.0
+# From addons/oca-reporting-engine/requirements.txt
+#py3o.formats
+#altair
+#py3o.template
+# From addons/oca-community-data-files/requirements.txt
+pycountry
+# From addons/oca-partner-contact/requirements.txt
+email_validator
+# From addons/oca-server-tools/requirements.txt
+pygount
+xlrd
 pysftp
+xlwt
+openpyxl
+raven
+# From addons/oca-stock-logistics-barcode/requirements.txt
+python-barcode==0.13.1
+# From addons/oca-server-auth/requirements.txt
+#python-u2flib-server
+#zxcvbn
+#lasso
+#pyotp
+# From addons/oca-server-ux/requirements.txt
+pdf2image
+pyzbar
+# From addons/oca-event/requirements.txt
+oca.decorators
+# From addons/oca-social/requirements.txt
+premailer
+extract-msg
+# From addons/oca-account-financial-tools/requirements.txt
+#numpy
+# From addons/trobz-addons/odoo_toolkit/requirements.txt
+lorem
+# From addons/oca-connector/requirements.txt
+cachetools>=2.0.1
+# From addons/oca-web/requirements.txt
+mpld3==0.3
+#bokeh==1.1.0
+#matplotlib>=2.0.0
+#plotly==4.1.0
+# From addons/foodcoop-addons/requirements.txt
+py3dns==3.2.1
+validate-email==1.3
+# to fix error: AttributeError: module 'lib' has no attribute 'X509_V_FLAG_NOTIFY_POLICY'
+# pyOpenSSL==23.1.1
+# cryptography
 
-# Required by the module(s): barcodes_generator_abstract
-python-barcode
+# From edi repo
+dateparser
+factur-x
+factur-x<=3.1
+invoice2data
+ovh
+phonenumbers
+pypdf>=3.1.0,<5.0
+pyyaml
+regex
+xmlschema
 
-# Required by the module(s): l10n_fr_fec_oca
-unicodecsv
-
-# Required by the module(s): l10n_fr_fec_oca
-unidecode
-
-# Required by the module(s): queue_job
+# generated from l10n_france
+pyfrdas2>=0.6
+pypdf>=3.1.0
+python-stdnum
 requests
-
-# Required by the module(s): account_statement_import_ofx
-ofxparse
+requests_oauthlib
+unicodecsv
+unidecode
