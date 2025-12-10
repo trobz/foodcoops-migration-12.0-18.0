@@ -59,6 +59,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/2143/head  # product_to_scale_bizerba
         
 ./src/OCA/product-variant:
     defaults:
@@ -485,6 +486,8 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/682/head  # barcodes_generator_product
+        - OCA refs/pull/694/head  # barcodes_generator_partner
 
 ./src/OCA/storage:
     defaults:

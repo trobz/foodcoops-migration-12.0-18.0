@@ -111,7 +111,7 @@ WHERE name IN (
     -- 'product_average_consumption',
     -- 'product_history',
     'product_history_for_cpo',
-    'product_to_scale_bizerba',
+    -- 'product_to_scale_bizerba',
     'purchase_compute_order',
     'purchase_compute_order_min_package',
     -- 'purchase_package_qty',
