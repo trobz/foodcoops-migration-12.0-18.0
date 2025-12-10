@@ -539,6 +539,18 @@
     merges:
         - OCA 18.0
 
+./src/OCA/mail:
+    defaults:
+        depth: 300
+    remotes:
+        OCA: git@github.com:OCA/mail
+        trobz: git@github.com:trobz/mail.git
+    target: trobz merge-branch-foodcoop-18.0
+    merges:
+        - OCA 18.0
+        - OCA refs/pull/95/head  # mass_mailing_access
+        - OCA refs/pull/97/head  # mail_template_conditional_attachment
+
 # ./src/addons/foodcoop-addons:
 #     defaults:
 #         depth: 300
