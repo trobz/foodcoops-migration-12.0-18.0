@@ -7,9 +7,11 @@
         depth: 1
     remotes:
         odoo: https://github.com/odoo/odoo
+        trobz: git@gitlab.trobz.com:odoo/odoo.git
     target: odoo 14.0-target
     merges:
         - odoo 14.0
+        - trobz refs/pull/32/head
 
 ##############################################################################
 ## OpenUpgrade Repository
