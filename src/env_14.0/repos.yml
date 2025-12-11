@@ -4,7 +4,7 @@
 
 ./src/odoo:
     defaults:
-        depth: 1
+        depth: 300
     remotes:
         odoo: https://github.com/odoo/odoo
         trobz: git@gitlab.trobz.com:odoo/odoo.git
