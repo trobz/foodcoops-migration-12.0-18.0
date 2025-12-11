@@ -3,15 +3,15 @@
 ##############################################################################
 
 ./src/odoo:
-    defaults:
-        depth: 300
+    # defaults:
+    #     depth: 300
     remotes:
         odoo: https://github.com/odoo/odoo
         trobz: git@gitlab.trobz.com:odoo/odoo.git
-    target: odoo 14.0-target
+    target: trobz 14.0-target
     merges:
         - odoo 14.0
-        - trobz refs/pull/32/head
+        - trobz refs/merge-requests/32/head
 
 ##############################################################################
 ## OpenUpgrade Repository
