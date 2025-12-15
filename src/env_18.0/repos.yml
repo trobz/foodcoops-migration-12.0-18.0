@@ -113,6 +113,8 @@
     merges:
         - OCA 18.0
         - OCA refs/pull/2892/head  # purchase_package_qty
+        - OCA 129f392cef2bff6df2d636647915a4ca8ed75102  # purchase_compute_order
+        - OCA cd9e65c4016d359ad7713860155395750cf6df99  # purchase_compute_order_min_package
 
 ./src/OCA/purchase-reporting:
     defaults:
@@ -467,7 +469,8 @@
     merges:
         - OCA 18.0
         - OCA refs/pull/2455/head  # product_average_consumption
-        - OCA refs/pull/2456/head  # product_history
+        - OCA 2a21bd9b4995a9b29213354528929d53bb927795  # product_history
+        - OCA 162b1c03fb4ef8f75973c1bf1ca61d1b68458e3d  # product_history_for_cpo
 
 ./src/OCA/stock-logistics-reporting:
     defaults:
