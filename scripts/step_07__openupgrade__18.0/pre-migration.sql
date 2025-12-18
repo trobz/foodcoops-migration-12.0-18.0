@@ -10,6 +10,61 @@ where name in ('location_inventory', 'stock_location_scrapped') and module='stoc
 -- # We detect the version and use the correct type as needed.
 DROP AGGREGATE IF EXISTS array_concat_agg(anyarray);
 
+-- Set migrated modules as a variable for reuse in queries
+DO $$
+DECLARE
+    migrated_modules text[] := ARRAY[
+        'account_asset_management_xlsx',
+        'account_bank_statement_import_caisse_epargne',
+        'account_bank_statement_reconcile_option',
+        'account_invoice_refund_option',
+        'account_partner_journal',
+        'account_payment_select_account',
+        'account_payment_term_restricted',
+        'barcodes_generator_partner',
+        'barcodes_generator_product',
+        'mail_template_conditional_attachment',
+        'mass_mailing_access',
+        'product_average_consumption',
+        'product_history',
+        'product_history_for_cpo',
+        'product_to_scale_bizerba',
+        'purchase_compute_order',
+        'purchase_compute_order_min_package',
+        'purchase_package_qty',
+        'res_partner_account_move_line',
+        'stock_scrap_product_report',
+        'product_analytic'
+    ];
+BEGIN
+
+    -- Set module state to 'installed'
+    UPDATE ir_module_module
+    SET state = 'installed'
+    WHERE name = ANY(migrated_modules);
+
+    -- Deactivate views not in migrated modules
+    UPDATE ir_ui_view
+    SET active = false
+    WHERE id NOT IN (
+        SELECT res_id
+        FROM ir_model_data
+        WHERE model = 'ir.ui.view'
+          AND module = ANY(migrated_modules)
+    );
+
+    -- Deactivate menus not in migrated modules
+    UPDATE ir_ui_menu
+    SET active = false
+    WHERE id NOT IN (
+        SELECT res_id
+        FROM ir_model_data
+        WHERE model = 'ir.ui.menu'
+          AND module = ANY(migrated_modules)
+    );
+
+END $$;
+
 -- Clean some un-migrated modules
 UPDATE ir_module_module
 SET state = 'uninstalled'
