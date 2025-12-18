@@ -51,7 +51,6 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-        - OCA refs/pull/2150/head  # account_asset_management_xlsx
 
 ./src/OCA/product-attribute:
     defaults:
@@ -473,7 +472,7 @@
         depth: 300
     remotes:
         OCA: git@github.com:OCA/stock-logistics-warehouse
-        trobz: git@github.com:trobz/logistics-warehouse.git
+        trobz: git@github.com:trobz/stock-logistics-warehouse.git
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
