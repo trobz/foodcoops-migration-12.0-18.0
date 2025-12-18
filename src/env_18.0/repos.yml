@@ -326,6 +326,9 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/2129/head # account_invoice_refund_option
+        - OCA refs/pull/2112/head # account_partner_journal
+        - OCA refs/pull/2158/head # res_partner_account_move_line
 
 ./src/OCA/account-invoice-reporting:
     defaults:
@@ -356,6 +359,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/2150/head # account_asset_management_xlsx
 
 ./src/OCA/account-analytic:
     defaults:
@@ -377,7 +381,9 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-
+        - OCA refs/pull/911/head # account_payment_select_account
+        - OCA refs/pull/889/head # account_payment_term_restricted
+        
 ./src/OCA/account-reconcile:
     defaults:
         depth: 300
@@ -387,6 +393,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/922/head # account_bank_statement_reconcile_option
 
 ./src/OCA/account-fiscal-rule:
     defaults:
@@ -427,6 +434,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/836/head # bank_statement_import_caisse_epargne
   
 ./src/OCA/margin-analysis:
     defaults:
@@ -469,6 +477,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/2456/head
         - OCA refs/pull/2455/head  # product_average_consumption
         - OCA 2a21bd9b4995a9b29213354528929d53bb927795  # product_history
         - OCA 162b1c03fb4ef8f75973c1bf1ca61d1b68458e3d  # product_history_for_cpo
@@ -544,6 +553,8 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/689/head # l10n_fr_fec_background
+        - OCA refs/pull/687/head # l10n_fr_fec_group_sale_purchase
 
 ./src/OCA/mail:
     defaults:
