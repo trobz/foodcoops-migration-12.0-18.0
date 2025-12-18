@@ -43,20 +43,20 @@ BEGIN
     SET state = 'installed'
     WHERE name = ANY(migrated_modules);
 
-    -- Deactivate views not in migrated modules
+    -- Activate views in migrated modules
     UPDATE ir_ui_view
-    SET active = false
-    WHERE id NOT IN (
+    SET active = true
+    WHERE id IN (
         SELECT res_id
         FROM ir_model_data
         WHERE model = 'ir.ui.view'
           AND module = ANY(migrated_modules)
     );
 
-    -- Deactivate menus not in migrated modules
+    -- Activate menus in migrated modules
     UPDATE ir_ui_menu
-    SET active = false
-    WHERE id NOT IN (
+    SET active = true
+    WHERE id IN (
         SELECT res_id
         FROM ir_model_data
         WHERE model = 'ir.ui.menu'
