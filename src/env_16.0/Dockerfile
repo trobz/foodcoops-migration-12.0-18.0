@@ -1,8 +1,8 @@
 # <OOW> : Copy of https://github.com/odoo/odoo/blob/16.0/setup/package.dfsrc
-FROM debian:buster
+FROM debian:bullseye
 
-RUN sed -i -- 's/security.debian.org/archive.debian.org/g' /etc/apt/**.list
-RUN sed -i -- 's/deb.debian.org/archive.debian.org/g' /etc/apt/**.list
+# RUN sed -i -- 's/security.debian.org/archive.debian.org/g' /etc/apt/**.list
+# RUN sed -i -- 's/deb.debian.org/archive.debian.org/g' /etc/apt/**.list
 
 RUN apt-get update && \
     apt-get install -y locales && \
