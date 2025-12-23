@@ -2,31 +2,31 @@
 ## Odoo Repository
 ##############################################################################
 
-# ./src/odoo:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         odoo: https://github.com/odoo/odoo
-#         trobz: git@gitlab.trobz.com:odoo/odoo.git
-#     target: trobz 18.0-target
-#     merges:
-#         - odoo 18.0
-#         - trobz refs/merge-requests/33/head
+./src/odoo:
+    defaults:
+        depth: 300
+    remotes:
+        odoo: https://github.com/odoo/odoo
+        trobz: git@gitlab.trobz.com:odoo/odoo.git
+    target: trobz 18.0-target
+    merges:
+        - odoo 18.0
+        - trobz refs/merge-requests/33/head
 
 # ##############################################################################
 # ## OpenUpgrade Repository
 # ##############################################################################
 
-# ./src/openupgrade:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: https://github.com/OCA/OpenUpgrade
-#         trobz: git@github.com:trobz/OpenUpgrade.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - trobz 18.0
-#         - trobz refs/pull/4/head
+./src/openupgrade:
+    defaults:
+        depth: 300
+    remotes:
+        OCA: https://github.com/OCA/OpenUpgrade
+        trobz: git@github.com:trobz/OpenUpgrade.git
+    target: trobz merge-branch-foodcoop-18.0
+    merges:
+        - trobz 18.0
+        - trobz refs/pull/4/head
 
 ##############################################################################
 ## OCA Repositories
