@@ -23,10 +23,12 @@
     remotes:
         OCA: https://github.com/OCA/OpenUpgrade
         trobz: git@github.com:trobz/OpenUpgrade.git
-    target: trobz merge-branch-foodcoop-18.0
+        trobz_gitlab: git@gitlab.trobz.com:odoo/OpenUpgrade.git
+    target: trobz_gitlab merge-branch-foodcoop-18.0
     merges:
         - trobz 18.0
         - trobz refs/pull/4/head
+        - trobz_gitlab mig_foodcoop_18
 
 ##############################################################################
 ## OCA Repositories
