@@ -3,6 +3,7 @@
 *.po
 *.pot
 *.pyc
+.github/copilot-instructions.md
 filestore/
 log/*.log
 postgres_data/
