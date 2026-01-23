@@ -3,5 +3,6 @@
 UPDATE ir_module_module
 SET state = 'installed'
 WHERE name IN (
-    'bundle_lalouve'
+    'bundle_lalouve',
+    'pos_order_remove_line'
 )

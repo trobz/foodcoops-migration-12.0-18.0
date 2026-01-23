@@ -254,6 +254,7 @@
     remotes:
         OCA: git@github.com:OCA/pos
         trobz: git@github.com:trobz/pos.git
+        P-H-Phuc: git@github.com:P-H-Phuc/pos.git
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
@@ -263,8 +264,10 @@
         - OCA refs/pull/1473/head  # pos_order_return
         - OCA refs/pull/1474/head  # pos_payment_terminal
         - OCA refs/pull/1475/head  # pos_payment_terminal_return
-        - OCA refs/pull/1476/head  # pos_order_return_scrap
+        # - OCA refs/pull/1476/head  # pos_order_return_scrap
+        - OCA 564c8046c9aadf1a9bcca86f80dc4129b1dfadb2  # pos_order_return_scrap to fix conflict
         - OCA refs/pull/1477/head  # pos_automatic_validation
+        - P-H-Phuc refs/pull/7/head  # pos_order_remove_line
 
 ./src/OCA/event:
     defaults:
