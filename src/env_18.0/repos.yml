@@ -340,7 +340,7 @@
         - OCA 18.0
         - OCA refs/pull/2129/head # account_invoice_refund_option
         - OCA refs/pull/2112/head # account_partner_journal
-        - OCA refs/pull/2158/head # res_partner_account_move_line
+        - OCA refs/pull/2158/head # partner_account_move_line
 
 ./src/OCA/account-invoice-reporting:
     defaults:
