@@ -161,7 +161,7 @@ WHERE name IN (
     'pos_restrict_scan',
     'pos_scrap_order',
     'pos_search_improvement',
-    'pos_ticket_send_by_mail',
+    -- 'pos_ticket_send_by_mail',
     'pos_transfer_account',
     -- 'product_average_consumption',
     -- 'product_history',
