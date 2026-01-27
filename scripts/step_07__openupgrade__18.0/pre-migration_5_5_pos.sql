@@ -8,3 +8,6 @@ ALTER TABLE account_journal RENAME COLUMN pos_terminal_payment_mode TO oca_payme
 
 -- pos_payment_terminal_return --
 ALTER TABLE pos_config RENAME COLUMN iface_payment_terminal_return TO oca_payment_terminal_return;
+
+-- pos_transfer_account --
+ALTER TABLE pos_config RENAME COLUMN transfer_account_id TO suspense_account_id;

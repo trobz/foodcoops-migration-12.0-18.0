@@ -258,6 +258,12 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/1403/head  # pos_product_multi_barcode
+        - OCA refs/pull/1406/head  # pos_price_to_weight
+        - OCA refs/pull/1411/head  # pos_report_session_summary
+        - OCA refs/pull/1412/head  # pos_empty_home
+        - OCA refs/pull/1413/head  # pos_customer_required
+        - OCA refs/pull/1428/head  # pos_quick_logout
         - OCA refs/pull/1445/head  # pos_order_report
         - OCA refs/pull/1459/head  # pos_transfer_account
         - OCA refs/pull/1460/head  # pos_ticket_send_by_mail
@@ -383,6 +389,7 @@
     merges:
         - OCA 18.0
         - OCA refs/pull/850/head # product_analytic
+        - OCA 0ea527faac974021ecb44135c781463aa167852c  # product_analytic_pos
 
 ./src/OCA/account-payment:
     defaults:
