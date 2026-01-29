@@ -33,7 +33,7 @@ def migrate_column_from_journal_to_payment_method(env, colname_aj, colname_ppm):
     _logger.info(f"Removed {colname_aj} column from account_journal")
 
 
-def set_fast_payment_for_card_terminals(env):
+def migrate_fast_payment_for_card_terminals(env):
     """
     Set oca_fast_payment = True for payment methods with card terminal mode.
     
@@ -83,7 +83,7 @@ env = env  # noqa: F821
 migrate_column_from_journal_to_payment_method(env, "is_automatic_validation", "is_automatic_validation")
 migrate_column_from_journal_to_payment_method(env, "oca_payment_terminal_mode", "oca_payment_terminal_mode")
 
-set_fast_payment_for_card_terminals(env)
+migrate_fast_payment_for_card_terminals(env)
 migrate_oca_payment_terminal_return(env)
 
 env.cr.commit()
