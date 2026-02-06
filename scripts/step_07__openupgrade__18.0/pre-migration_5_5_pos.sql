@@ -11,3 +11,6 @@ ALTER TABLE pos_config RENAME COLUMN iface_payment_terminal_return TO oca_paymen
 
 -- pos_transfer_account --
 ALTER TABLE pos_config RENAME COLUMN transfer_account_id TO suspense_account_id;
+
+-- pos_automatic_cashdrawer --
+ALTER TABLE account_journal RENAME COLUMN iface_automatic_cashdrawer TO oca_iface_automatic_cashdrawer;

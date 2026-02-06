@@ -255,6 +255,7 @@
         OCA: git@github.com:OCA/pos
         trobz: git@github.com:trobz/pos.git
         P-H-Phuc: git@github.com:P-H-Phuc/pos.git
+        chien: git@github.com:nguyenminhchien/pos.git
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
@@ -274,6 +275,9 @@
         - OCA 564c8046c9aadf1a9bcca86f80dc4129b1dfadb2  # pos_order_return_scrap to fix conflict
         - OCA refs/pull/1477/head  # pos_automatic_validation
         - P-H-Phuc refs/pull/7/head  # pos_order_remove_line
+        - OCA refs/pull/1480/head  # pos_access_right
+        - P-H-Phuc 70560066a46894f8e718be8707bd134c2d44ca56 # pos_automatic_cashdrawer
+        - chien 20419b2d46a28aa8f1e86c25932b7860fa75afa9 # pos_payment_change_account
 
 ./src/OCA/event:
     defaults:
@@ -344,6 +348,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/1870/head # account_invoice_merge
         - OCA refs/pull/2129/head # account_invoice_refund_option
         - OCA refs/pull/2112/head # account_partner_journal
         - OCA refs/pull/2158/head # partner_account_move_line
@@ -385,10 +390,12 @@
     remotes:
         OCA: git@github.com:OCA/account-analytic
         trobz: git@github.com:trobz/account-analytic.git
+        P-H-Phuc: git@github.com:P-H-Phuc/account-analytic.git
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
         - OCA refs/pull/850/head # product_analytic
+        - P-H-Phuc 1b94756d08ad6a8e78426fcbbc7af305b83a8dd2 # product_analytic: Analytic Distribution Model in product.template
         - OCA 0ea527faac974021ecb44135c781463aa167852c  # product_analytic_pos
 
 ./src/OCA/account-payment:
