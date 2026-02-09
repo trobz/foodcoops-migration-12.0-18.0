@@ -276,7 +276,7 @@
         - OCA refs/pull/1477/head  # pos_automatic_validation
         - P-H-Phuc refs/pull/7/head  # pos_order_remove_line
         - OCA refs/pull/1480/head  # pos_access_right
-        - P-H-Phuc 70560066a46894f8e718be8707bd134c2d44ca56 # pos_automatic_cashdrawer
+        - OCA refs/pull/1485/head  # pos_automatic_cashdrawer
         - chien 20419b2d46a28aa8f1e86c25932b7860fa75afa9 # pos_payment_change_account
 
 ./src/OCA/event:
@@ -396,7 +396,6 @@
         - OCA 18.0
         - OCA refs/pull/850/head # product_analytic
         - P-H-Phuc 1b94756d08ad6a8e78426fcbbc7af305b83a8dd2 # product_analytic: Analytic Distribution Model in product.template
-        - OCA 0ea527faac974021ecb44135c781463aa167852c  # product_analytic_pos
 
 ./src/OCA/account-payment:
     defaults:
@@ -578,8 +577,9 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/687/head # l10n_fr_fec_oca
+        - OCA refs/pull/688/head # l10n_fr_fec_group_sale_purchase
         - OCA refs/pull/689/head # l10n_fr_fec_background
-        - OCA refs/pull/687/head # l10n_fr_fec_group_sale_purchase
 
 ./src/OCA/mail:
     defaults:

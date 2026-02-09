@@ -3,7 +3,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-def migrate_column_from_journal_to_payment_method(env, colname_aj, colname_ppm):
+def migrate_column_from_journal_to_payment_method(env, colname_aj, colname_ppm, remove_old=True):
     """
     Migrate a column from account.journal to pos.payment.method.
     
@@ -25,12 +25,13 @@ def migrate_column_from_journal_to_payment_method(env, colname_aj, colname_ppm):
     _logger.info(f"Updated {colname_ppm} for {env.cr.rowcount} payment methods from their journals")
 
     # Remove redundant field from account.journal
-    _logger.info(f"Removing redundant {colname_aj} field from account.journal")
-    env.cr.execute(f"""
-        ALTER TABLE account_journal 
-        DROP COLUMN IF EXISTS {colname_aj}
-    """)
-    _logger.info(f"Removed {colname_aj} column from account_journal")
+    if remove_old:
+        _logger.info(f"Removing redundant {colname_aj} field from account.journal")
+        env.cr.execute(f"""
+            ALTER TABLE account_journal 
+            DROP COLUMN IF EXISTS {colname_aj}
+        """)
+        _logger.info(f"Removed {colname_aj} column from account_journal")
 
 
 def migrate_fast_payment_for_card_terminals(env):
@@ -75,6 +76,30 @@ def migrate_oca_payment_terminal_return(env):
     """)
     _logger.info("Removed oca_payment_terminal_return column from pos_config")
 
+def migrate_change_account_id(env):
+    """
+    Update change_account_id in pos.payment.method by default_account_id from account.journal.
+    Then update default_account_id of account.journal by its column oca_change_account_id.
+    """
+    _logger.info("Migrating change_account_id in pos.payment.method from default_account_id in account.journal")
+    env.cr.execute("""
+        UPDATE pos_payment_method ppm
+        SET change_account_id = aj.default_account_id
+        FROM account_journal aj
+        WHERE ppm.name = aj.name
+            AND aj.id IS NOT NULL
+            AND aj.default_account_id IS NOT NULL
+            AND aj.oca_change_account_id IS NOT NULL
+    """)
+    _logger.info(f"Updated change_account_id for {env.cr.rowcount} payment methods from their journals")
+
+    _logger.info("Updating default_account_id in account.journal from oca_change_account_id")
+    env.cr.execute("""
+        UPDATE account_journal
+        SET default_account_id = oca_change_account_id
+        WHERE oca_change_account_id IS NOT NULL
+    """)
+    _logger.info(f"Updated default_account_id for {env.cr.rowcount} journals from oca_change_account_id")
 
 _logger.info("Executing post-post-migration_5_5_pos_payment_method.py script ...")
 
@@ -86,6 +111,7 @@ migrate_column_from_journal_to_payment_method(env, "oca_iface_automatic_cashdraw
 
 migrate_fast_payment_for_card_terminals(env)
 migrate_oca_payment_terminal_return(env)
+migrate_change_account_id(env)
 
 env.cr.commit()
 _logger.info("Finished post-post-migration_5_5_pos_payment_method.py script")
