@@ -76,6 +76,7 @@ def migrate_oca_payment_terminal_return(env):
     """)
     _logger.info("Removed oca_payment_terminal_return column from pos_config")
 
+
 def migrate_change_account_id(env):
     """
     Update change_account_id in pos.payment.method by default_account_id from account.journal.
@@ -101,6 +102,55 @@ def migrate_change_account_id(env):
     """)
     _logger.info(f"Updated default_account_id for {env.cr.rowcount} journals from oca_change_account_id")
 
+
+def migrate_credit_terminal_settings(env):
+    """
+    Set use_payment_terminal and payment_method_type on pos.payment.method
+    when related account.journal has oca_is_credit enabled.
+    """
+    _logger.info("Setting payment terminal fields for credit journals")
+    env.cr.execute("""
+        UPDATE pos_payment_method ppm
+        SET use_payment_terminal = 'credit',
+            payment_method_type = 'terminal'
+        FROM account_journal aj
+        WHERE ppm.name = aj.name
+            AND aj.id IS NOT NULL
+            AND aj.oca_is_credit IS TRUE
+    """)
+    _logger.info(f"Updated payment terminal fields for {env.cr.rowcount} credit payment methods")
+
+    _logger.info("Removing redundant oca_is_credit field from account_journal")
+    env.cr.execute("""
+        ALTER TABLE account_journal
+        DROP COLUMN IF EXISTS oca_is_credit
+    """)
+    _logger.info("Removed oca_is_credit column from account_journal")
+
+def migrate_auto_apply_credit_amount(env):
+    """
+    Set auto_apply_credit_amount on credit payment methods from pos.config flag,
+    then drop the migrated column from pos_config.
+    """
+    _logger.info("Setting auto_apply_credit_amount for credit terminal payment methods")
+    env.cr.execute("""
+        UPDATE pos_payment_method ppm
+        SET auto_apply_credit_amount = TRUE
+        FROM pos_config pc
+        JOIN pos_config_pos_payment_method_rel rel ON rel.pos_config_id = pc.id
+        WHERE ppm.id = rel.pos_payment_method_id
+            AND ppm.use_payment_terminal = 'credit'
+            AND pc.oca_auto_apply_credit_amount IS TRUE
+    """)
+    _logger.info(f"Updated auto_apply_credit_amount for {env.cr.rowcount} payment methods from their pos configs")
+
+    _logger.info("Removing redundant oca_auto_apply_credit_amount field from pos_config")
+    env.cr.execute("""
+        ALTER TABLE pos_config
+        DROP COLUMN IF EXISTS oca_auto_apply_credit_amount
+    """)
+    _logger.info("Removed oca_auto_apply_credit_amount column from pos_config")
+
 _logger.info("Executing post-post-migration_5_5_pos_payment_method.py script ...")
 
 env = env  # noqa: F821
@@ -112,6 +162,8 @@ migrate_column_from_journal_to_payment_method(env, "oca_iface_automatic_cashdraw
 migrate_fast_payment_for_card_terminals(env)
 migrate_oca_payment_terminal_return(env)
 migrate_change_account_id(env)
+migrate_credit_terminal_settings(env)
+migrate_auto_apply_credit_amount(env)
 
 env.cr.commit()
 _logger.info("Finished post-post-migration_5_5_pos_payment_method.py script")

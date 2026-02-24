@@ -278,6 +278,7 @@
         - OCA refs/pull/1480/head  # pos_access_right
         - OCA refs/pull/1485/head  # pos_automatic_cashdrawer
         - chien 20419b2d46a28aa8f1e86c25932b7860fa75afa9 # pos_payment_change_account
+        - chien refs/pull/13/head  # pos_payment_credit
 
 ./src/OCA/event:
     defaults:
@@ -577,7 +578,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-        - OCA refs/pull/687/head # l10n_fr_fec_oca
+        - OCA refs/pull/707/head # l10n_fr_fec_oca
         - OCA refs/pull/688/head # l10n_fr_fec_group_sale_purchase
         - OCA refs/pull/689/head # l10n_fr_fec_background
 
@@ -682,3 +683,12 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - trobz 18.0
+
+./src/others/foodcoop-addons:
+    defaults:
+        depth: 300
+    remotes:
+        trobz: git@github.com:trobz/odoo-production.git
+    target: trobz merge-branch-foodcoop-18.0
+    merges:
+        - trobz 18.0_dev

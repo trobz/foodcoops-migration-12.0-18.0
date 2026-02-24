@@ -150,7 +150,7 @@ WHERE name IN (
     -- 'pos_order_return_scrap',
     'pos_order_wait_save',
     'pos_payment_change',
-    'pos_payment_credit',
+    -- 'pos_payment_credit',
     'pos_payment_credit_member',
     -- 'pos_payment_terminal',
     -- 'pos_payment_terminal_return',

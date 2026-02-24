@@ -17,3 +17,7 @@ ALTER TABLE account_journal RENAME COLUMN iface_automatic_cashdrawer TO oca_ifac
 
 -- pos_payment_change_account
 ALTER TABLE account_journal RENAME COLUMN change_account_id TO oca_change_account_id;
+
+-- pos_payment_credit
+ALTER TABLE account_journal RENAME COLUMN is_credit TO oca_is_credit;
+ALTER TABLE pos_config RENAME COLUMN auto_apply_credit_amount TO oca_auto_apply_credit_amount;
