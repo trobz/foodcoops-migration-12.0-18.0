@@ -24,14 +24,16 @@ def migrate_column_from_journal_to_payment_method(env, colname_aj, colname_ppm, 
     """)
     _logger.info(f"Updated {colname_ppm} for {env.cr.rowcount} payment methods from their journals")
 
-    # Remove redundant field from account.journal
-    if remove_old:
-        _logger.info(f"Removing redundant {colname_aj} field from account.journal")
-        env.cr.execute(f"""
-            ALTER TABLE account_journal 
-            DROP COLUMN IF EXISTS {colname_aj}
-        """)
-        _logger.info(f"Removed {colname_aj} column from account_journal")
+    # comment this code: for this stage: we keep the old field to allow re-run step7 without error, also, 
+    # it helps to keep trace of the old field and the new field.
+    # # Remove redundant field from account.journal
+    # if remove_old:
+    #     _logger.info(f"Removing redundant {colname_aj} field from account.journal")
+    #     env.cr.execute(f"""
+    #         ALTER TABLE account_journal 
+    #         DROP COLUMN IF EXISTS {colname_aj}
+    #     """)
+    #     _logger.info(f"Removed {colname_aj} column from account_journal")
 
 
 def migrate_fast_payment_for_card_terminals(env):
@@ -68,13 +70,15 @@ def migrate_oca_payment_terminal_return(env):
     """)
     _logger.info(f"Updated oca_payment_terminal_return for {env.cr.rowcount} payment methods from their pos configs")
     
-    # Remove redundant field from pos_config
-    _logger.info("Removing redundant oca_payment_terminal_return field from pos_config")
-    env.cr.execute("""
-        ALTER TABLE pos_config 
-        DROP COLUMN IF EXISTS oca_payment_terminal_return
-    """)
-    _logger.info("Removed oca_payment_terminal_return column from pos_config")
+    # comment this code: for this stage: we keep the old field to allow re-run step7 without error, also, 
+    # it helps to keep trace of the old field and the new field.
+    # # Remove redundant field from pos_config
+    # _logger.info("Removing redundant oca_payment_terminal_return field from pos_config")
+    # env.cr.execute("""
+    #     ALTER TABLE pos_config 
+    #     DROP COLUMN IF EXISTS oca_payment_terminal_return
+    # """)
+    # _logger.info("Removed oca_payment_terminal_return column from pos_config")
 
 
 def migrate_change_account_id(env):
@@ -120,12 +124,14 @@ def migrate_credit_terminal_settings(env):
     """)
     _logger.info(f"Updated payment terminal fields for {env.cr.rowcount} credit payment methods")
 
-    _logger.info("Removing redundant oca_is_credit field from account_journal")
-    env.cr.execute("""
-        ALTER TABLE account_journal
-        DROP COLUMN IF EXISTS oca_is_credit
-    """)
-    _logger.info("Removed oca_is_credit column from account_journal")
+    # comment this code: for this stage: we keep the old field to allow re-run step7 without error, also, 
+    # it helps to keep trace of the old field and the new field.
+    # _logger.info("Removing redundant oca_is_credit field from account_journal")
+    # env.cr.execute("""
+    #     ALTER TABLE account_journal
+    #     DROP COLUMN IF EXISTS oca_is_credit
+    # """)
+    # _logger.info("Removed oca_is_credit column from account_journal")
 
 def migrate_auto_apply_credit_amount(env):
     """
@@ -144,12 +150,15 @@ def migrate_auto_apply_credit_amount(env):
     """)
     _logger.info(f"Updated auto_apply_credit_amount for {env.cr.rowcount} payment methods from their pos configs")
 
-    _logger.info("Removing redundant oca_auto_apply_credit_amount field from pos_config")
-    env.cr.execute("""
-        ALTER TABLE pos_config
-        DROP COLUMN IF EXISTS oca_auto_apply_credit_amount
-    """)
-    _logger.info("Removed oca_auto_apply_credit_amount column from pos_config")
+    
+    # comment this code: for this stage: we keep the old field to allow re-run step7 without error, also, 
+    # it helps to keep trace of the old field and the new field.
+    # _logger.info("Removing redundant oca_auto_apply_credit_amount field from pos_config")
+    # env.cr.execute("""
+    #     ALTER TABLE pos_config
+    #     DROP COLUMN IF EXISTS oca_auto_apply_credit_amount
+    # """)
+    # _logger.info("Removed oca_auto_apply_credit_amount column from pos_config")
 
 _logger.info("Executing post-post-migration_5_5_pos_payment_method.py script ...")
 
