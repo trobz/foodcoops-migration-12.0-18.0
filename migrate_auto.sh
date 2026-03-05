@@ -30,7 +30,7 @@ pew in oow oow upgrade --first-step 2 --last-step 8 --database ${DB_NAME}_prod_$
 # dump the migrated db v18 into a file
 pew in oow oow dumpdb -d ${DB_NAME}_prod_$NOW --database-path ${DB_NAME}_migrated_$NOW.dump --database-format c --filestore-path ${DB_NAME}_prod_migrated_$NOW --filestore-format d
 
-pew in oow oow psql -c "SELECT pg_terminate_backend(pid)
+pew in oow oow psql -d ${DB_NAME}_prod_$NOW --no-pager -c "SELECT pg_terminate_backend(pid)
 FROM pg_stat_activity
 WHERE datname = '${DB_NAME}_prod_$NOW'
   AND pid <> pg_backend_pid();
