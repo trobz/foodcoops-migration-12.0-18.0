@@ -264,3 +264,45 @@ WHERE id IN (
 -- );
 
 
+-- Dispatcher: run database-specific SQL based on current database name prefix.
+DO $$
+DECLARE
+    db_prefix TEXT := split_part(current_database(), '_', 1);
+BEGIN
+
+    -- -------------------------------------------------------------------------
+    -- superquinquin
+    -- -------------------------------------------------------------------------
+    IF db_prefix = 'superquinquin' THEN
+
+        IF EXISTS (
+            SELECT 1 FROM information_schema.tables
+            WHERE table_name = 'printnode_scenario'
+        ) THEN
+            -- Remove scenarios whose referenced report will be deleted by OpenUpgrade
+            
+            -- DELETE FROM printnode_scenario
+            -- WHERE report_id IS NOT NULL
+            --   AND report_id NOT IN (SELECT id FROM ir_act_report_xml);
+            -- Drop NOT NULL so remaining ON DELETE SET NULL can succeed
+            
+            ALTER TABLE printnode_scenario ALTER COLUMN report_id DROP NOT NULL;
+        END IF;
+
+    -- -------------------------------------------------------------------------
+    -- lalouve
+    -- -------------------------------------------------------------------------
+    ELSIF db_prefix = 'lalouve' THEN
+
+        -- Add lalouve-specific pre-migration SQL here
+        RAISE NOTICE 'Running lalouve pre-migration for database: %', current_database();
+
+    -- -------------------------------------------------------------------------
+    -- No match
+    -- -------------------------------------------------------------------------
+    ELSE
+        RAISE NOTICE 'No specific pre-migration SQL for prefix: %', db_prefix;
+
+    END IF;
+
+END $$;
