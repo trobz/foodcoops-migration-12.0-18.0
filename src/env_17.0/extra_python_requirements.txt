@@ -82,3 +82,5 @@ python-stdnum
 python-stdnum>=1.18
 requests_oauthlib
 unidecode
+
+pycups

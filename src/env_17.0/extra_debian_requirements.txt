@@ -1,1 +1,5 @@
 
+
+libcups2-dev
+gcc
+python3-dev

@@ -60,3 +60,5 @@ factur-x
 lxml
 pyyaml
 xmlschema
+
+pycups

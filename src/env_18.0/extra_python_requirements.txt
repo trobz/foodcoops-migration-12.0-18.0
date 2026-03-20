@@ -83,3 +83,5 @@ python-stdnum>=1.18
 requests_oauthlib
 unidecode
 phonenumbers
+
+pycups
