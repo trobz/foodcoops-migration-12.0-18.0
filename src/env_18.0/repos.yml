@@ -430,6 +430,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/546/head # account_product_fiscal_classification
 
 ./src/OCA/currency:
     defaults:
