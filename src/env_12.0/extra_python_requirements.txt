@@ -64,5 +64,6 @@ mpld3==0.3
 # From addons/foodcoop-addons/requirements.txt
 py3dns==3.2.1
 validate-email==1.3
+
 zpl2>=1.1
 pycups==1.9.73
