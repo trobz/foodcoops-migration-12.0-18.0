@@ -1,3 +1,19 @@
+-- stock.inventory.line was removed in Odoo 15.0. During _process_end, Odoo tries to
+-- unlink orphaned ir.model.fields records for this model via ORM, which fails with
+-- KeyError because the model is no longer in the 15.0 registry. Delete via SQL first.
+DELETE FROM ir_model_data
+WHERE model = 'ir.model.fields'
+  AND res_id IN (
+      SELECT f.id FROM ir_model_fields f
+      JOIN ir_model m ON f.model_id = m.id
+      WHERE m.model = 'stock.inventory.line'
+  );
+
+DELETE FROM ir_model_fields
+WHERE model_id IN (
+    SELECT id FROM ir_model WHERE model = 'stock.inventory.line'
+);
+
 -- Dispatcher: run database-specific SQL based on current database name prefix.
 
 DO $$
