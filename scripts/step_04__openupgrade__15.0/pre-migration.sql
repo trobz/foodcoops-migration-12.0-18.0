@@ -36,6 +36,11 @@ BEGIN
         WHERE pp.id = d.id
           AND d.rn > 1;
 
+    ELSIF db_prefix = 'tmt' THEN
+
+        -- # OCA/account-financial-tools
+        -- found error when doing rename module "account_menu" to "account_usability",
+        UPDATE ir_module_module SET name = 'account_usability_new' WHERE name = 'account_usability';
     -- -------------------------------------------------------------------------
     -- lalouve
     -- -------------------------------------------------------------------------
