@@ -38,9 +38,20 @@ BEGIN
 
     ELSIF db_prefix = 'tmt' THEN
 
-        -- # OCA/account-financial-tools
-        -- found error when doing rename module "account_menu" to "account_usability",
-        UPDATE ir_module_module SET name = 'account_usability_new' WHERE name = 'account_usability';
+        -- account_menu is renamed to account_usability in 15.0 (OCA/account-financial-tools).
+        -- The tmt db had both account_menu AND account_usability installed, so OpenUpgrade
+        -- fails renaming module_account_menu → module_account_usability because the target
+        -- already exists in ir_model_data.
+        -- Fix: rename the existing account_usability out of the way in BOTH tables.
+        UPDATE ir_module_module
+        SET name = 'account_usability_old'
+        WHERE name = 'account_usability';
+
+        UPDATE ir_model_data
+        SET name = 'module_account_usability_old'
+        WHERE module = 'base'
+          AND model = 'ir.module.module'
+          AND name = 'module_account_usability';
     -- -------------------------------------------------------------------------
     -- lalouve
     -- -------------------------------------------------------------------------
