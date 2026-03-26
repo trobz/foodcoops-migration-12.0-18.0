@@ -1,6 +1,3 @@
-# setuptools provides pkg_resources; newer pip no longer bundles it by default
-setuptools
-
 # Mandatory library used in all odoo-openupgrade-wizard
 # Note: As the openupgradelib is not allways up to date in pypi,
 # we use the github master url.
@@ -91,5 +88,5 @@ python-stdnum
 requests
 requests_oauthlib
 unidecode
-
+setuptools<81
 pycups

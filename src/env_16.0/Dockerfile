@@ -17,16 +17,16 @@ ENV LC_ALL=C.UTF-8
 RUN apt-get update -qq &&  \
     apt-get upgrade -qq -y && \
     apt-get install \
-        postgresql \
-        postgresql-server-dev-all \
-        postgresql-client \
-        adduser \
-        libldap2-dev \
-        libsasl2-dev \
-        python3-pip \
-        python3-wheel \
-        build-essential \
-        python3 -y && \
+    postgresql \
+    postgresql-server-dev-all \
+    postgresql-client \
+    adduser \
+    libldap2-dev \
+    libsasl2-dev \
+    python3-pip \
+    python3-wheel \
+    build-essential \
+    python3 -y && \
     rm -rf /var/lib/apt/lists/*
 
 # <OOW> Install Debian packages
