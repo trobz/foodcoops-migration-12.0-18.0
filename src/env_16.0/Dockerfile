@@ -43,7 +43,7 @@ COPY ./src/odoo/requirements.txt /odoo_python_requirements.txt
 COPY addons_python_requirements.txt /addons_python_requirements.txt
 COPY extra_python_requirements.txt /extra_python_requirements.txt
 RUN pip3 install --upgrade pip \
-    && python3 -m pip install --no-cache-dir setuptools-scm \
+    && python3 -m pip install --no-cache-dir setuptools setuptools-scm \
     && python3 -m pip install --no-cache-dir -r /odoo_python_requirements.txt \
     && python3 -m pip install --no-cache-dir -r /extra_python_requirements.txt \
     && python3 -m pip install --no-cache-dir -r /addons_python_requirements.txt
