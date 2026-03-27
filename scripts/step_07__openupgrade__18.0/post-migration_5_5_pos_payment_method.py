@@ -81,11 +81,24 @@ def migrate_oca_payment_terminal_return(env):
     # _logger.info("Removed oca_payment_terminal_return column from pos_config")
 
 
+def _column_exists(env, table, column):
+    env.cr.execute("""
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = %s AND column_name = %s
+    """, (table, column))
+    return bool(env.cr.fetchone())
+
+
 def migrate_change_account_id(env):
     """
     Update change_account_id in pos.payment.method by default_account_id from account.journal.
     Then update default_account_id of account.journal by its column oca_change_account_id.
+    Skipped if oca_change_account_id doesn't exist (pos_payment_change_account not installed).
     """
+    if not _column_exists(env, 'account_journal', 'oca_change_account_id'):
+        _logger.info("Column oca_change_account_id not found in account_journal, skipping migrate_change_account_id")
+        return
+
     _logger.info("Migrating change_account_id in pos.payment.method from default_account_id in account.journal")
     env.cr.execute("""
         UPDATE pos_payment_method ppm
@@ -111,7 +124,12 @@ def migrate_credit_terminal_settings(env):
     """
     Set use_payment_terminal and payment_method_type on pos.payment.method
     when related account.journal has oca_is_credit enabled.
+    Skipped if oca_is_credit doesn't exist (pos_payment_credit not installed).
     """
+    if not _column_exists(env, 'account_journal', 'oca_is_credit'):
+        _logger.info("Column oca_is_credit not found in account_journal, skipping migrate_credit_terminal_settings")
+        return
+
     _logger.info("Setting payment terminal fields for credit journals")
     env.cr.execute("""
         UPDATE pos_payment_method ppm
@@ -137,7 +155,12 @@ def migrate_auto_apply_credit_amount(env):
     """
     Set auto_apply_credit_amount on credit payment methods from pos.config flag,
     then drop the migrated column from pos_config.
+    Skipped if oca_auto_apply_credit_amount doesn't exist (pos_payment_credit not installed).
     """
+    if not _column_exists(env, 'pos_config', 'oca_auto_apply_credit_amount'):
+        _logger.info("Column oca_auto_apply_credit_amount not found in pos_config, skipping migrate_auto_apply_credit_amount")
+        return
+
     _logger.info("Setting auto_apply_credit_amount for credit terminal payment methods")
     env.cr.execute("""
         UPDATE pos_payment_method ppm
