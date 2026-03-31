@@ -43,10 +43,12 @@ def migrate_column_from_journal_to_payment_method(env, colname_aj, colname_ppm, 
 def migrate_fast_payment_for_card_terminals(env):
     """
     Set oca_fast_payment = True for payment methods with card terminal mode.
-    
-    Args:
-        env: Odoo environment
+    Skipped if oca_payment_terminal_mode doesn't exist (pos_payment_terminal not installed).
     """
+    if not _column_exists(env, 'pos_payment_method', 'oca_payment_terminal_mode'):
+        _logger.info("Column oca_payment_terminal_mode not found in pos_payment_method, skipping migrate_fast_payment_for_card_terminals")
+        return
+
     _logger.info("Setting oca_fast_payment = True for payment methods with card terminal mode")
     env.cr.execute("""
         UPDATE pos_payment_method
@@ -60,10 +62,12 @@ def migrate_fast_payment_for_card_terminals(env):
 def migrate_oca_payment_terminal_return(env):
     """
     Copy oca_payment_terminal_return from pos.config to related pos.payment.method records.
-    
-    Args:
-        env: Odoo environment
+    Skipped if oca_payment_terminal_return doesn't exist (pos_payment_terminal_return not installed).
     """
+    if not _column_exists(env, 'pos_config', 'oca_payment_terminal_return'):
+        _logger.info("Column oca_payment_terminal_return not found in pos_config, skipping migrate_oca_payment_terminal_return")
+        return
+
     _logger.info("Copying oca_payment_terminal_return from pos.config to pos.payment.method")
     env.cr.execute("""
         UPDATE pos_payment_method ppm
