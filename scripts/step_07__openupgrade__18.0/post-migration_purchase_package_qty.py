@@ -4,6 +4,13 @@ _logger = logging.getLogger(__name__)
 
 PACKAGE_NAME_PREFIX = "P-"
 
+def _column_exists(env, table, column):
+    env.cr.execute("""
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = %s AND column_name = %s
+    """, (table, column))
+    return bool(env.cr.fetchone())
+
 def get_or_create_packaging(env, product_id, package_qty):
     Package = env["product.packaging"]
     packaging = Package.search([
@@ -24,6 +31,9 @@ def get_or_create_packaging(env, product_id, package_qty):
     return packaging
 
 def set_packaging_psi(env):
+    if not _column_exists(env, "product_supplierinfo", "mig_package_qty"):
+        _logger.info("Skipping set_packaging_psi: column mig_package_qty not found in product_supplierinfo")
+        return
     _logger.info("Set packaging for Product supplier info ...")
     sql = """
         SELECT psi.id res_id, psi.product_id, product_tmpl_id, mig_package_qty
@@ -71,6 +81,9 @@ def set_packaging_psi(env):
     _logger.info("Completed: Set packaging for Product supplier info ...")
 
 def set_packaging_purchase_line(env):
+    if not _column_exists(env, "purchase_order_line", "mig_package_qty"):
+        _logger.info("Skipping set_packaging_purchase_line: column mig_package_qty not found in purchase_order_line")
+        return
     _logger.info("Set packaging for Purchase line ...")
     POLine = env["purchase.order.line"]
     sql = """
@@ -113,6 +126,9 @@ def set_packaging_purchase_line(env):
     _logger.info("Completed: Set packaging for Purchase line ...")
 
 def set_packaging_stock_move(env):
+    if not _column_exists(env, "stock_move", "product_qty_package"):
+        _logger.info("Skipping set_packaging_stock_move: column product_qty_package not found in stock_move")
+        return
     _logger.info("Set packaging for Stock move ...")
     sql = """
     WITH raw_data as (
