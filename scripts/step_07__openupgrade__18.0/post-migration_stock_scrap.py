@@ -8,7 +8,14 @@ env = env  # noqa: F821
 # Insert the records from stock.scrap.origin into stock.scrap.reason.tag
 ReasonTag = env["stock.scrap.reason.tag"]
 existed = ReasonTag.search([], limit=1)
-if not existed:
+
+env.cr.execute("""
+    SELECT 1 FROM information_schema.tables
+    WHERE table_name = 'stock_scrap_origin'
+""")
+table_exists = bool(env.cr.fetchone())
+
+if not existed and table_exists:
     # Only insert if not existed.
     env.cr.execute("SELECT id, name FROM stock_scrap_origin")
     origins = env.cr.fetchall()
