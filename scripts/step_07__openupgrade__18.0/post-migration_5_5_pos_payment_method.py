@@ -6,12 +6,16 @@ _logger = logging.getLogger(__name__)
 def migrate_column_from_journal_to_payment_method(env, colname_aj, colname_ppm, remove_old=True):
     """
     Migrate a column from account.journal to pos.payment.method.
-    
+
     Args:
         env: Odoo environment
         colname_aj: Column name in account_journal table
         colname_ppm: Column name in pos_payment_method table
     """
+    if not _column_exists(env, 'account_journal', colname_aj):
+        _logger.info(f"Column {colname_aj} not found in account_journal, skipping")
+        return
+
     # Update field in pos.payment.method from account.journal
     _logger.info(f"Processing payment methods: copying {colname_aj} from account.journal to {colname_ppm} in pos.payment.method")
     env.cr.execute(f"""
