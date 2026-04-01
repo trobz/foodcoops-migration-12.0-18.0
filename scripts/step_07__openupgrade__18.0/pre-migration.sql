@@ -294,44 +294,31 @@ BEGIN
     -- -------------------------------------------------------------------------
     ELSIF db_prefix = 'tmt' THEN
 
-        -- Duplicate res_groups records (same category_id + en_US name) without a
-        -- corresponding ir_model_data entry cause a unique constraint violation on
-        -- res_groups_name_uniq when Odoo loads fr_FR translations in 18.0, because
-        -- the translation update sets the same JSONB name on two different rows.
+        -- Duplicate res_groups sharing the same (category_id, en_US name) as a
+        -- canonical sale module group cause a unique constraint violation on
+        -- res_groups_name_uniq when Odoo merges fr_FR translations in 18.0.
+        -- The duplicate may or may not have its own ir_model_data entry.
         --
-        -- Step 1: move users from each duplicate group to its canonical group
-        --         (the one tracked by ir_model_data), if not already a member.
-        INSERT INTO res_groups_users_rel (gid, uid)
-        SELECT canonical_id, uid
-        FROM (
-            SELECT g2.id AS canonical_id, rgu.uid
+        -- Strategy: keep only the sale-module canonical group for each
+        -- (category_id, en_US name) bucket; delete everything else in that bucket.
+        -- ON DELETE CASCADE on the rel tables handles group memberships automatically.
+        WITH sale_groups AS (
+            SELECT g.id, g.category_id, g.name->>'en_US' AS name_en
             FROM res_groups g
-            LEFT JOIN ir_model_data imd_g ON imd_g.model = 'res.groups' AND imd_g.res_id = g.id
-            JOIN res_groups g2 ON g2.category_id = g.category_id
-                               AND g2.id <> g.id
-                               AND (g2.name->>'en_US') = (g.name->>'en_US')
-            JOIN ir_model_data imd2 ON imd2.model = 'res.groups' AND imd2.res_id = g2.id
-            JOIN res_groups_users_rel rgu ON rgu.gid = g.id
-            LEFT JOIN res_groups_users_rel existing ON existing.gid = g2.id AND existing.uid = rgu.uid
-            WHERE imd_g.id IS NULL
-              AND existing.uid IS NULL
-        ) t;
-
-        -- Step 2: delete the duplicate groups (ON DELETE CASCADE handles rel tables).
+            JOIN ir_model_data imd ON imd.model = 'res.groups'
+                AND imd.module = 'sale'
+                AND imd.res_id = g.id
+            WHERE g.name->>'en_US' IS NOT NULL
+        )
         DELETE FROM res_groups
         WHERE id IN (
             SELECT g.id
             FROM res_groups g
-            LEFT JOIN ir_model_data imd_g ON imd_g.model = 'res.groups' AND imd_g.res_id = g.id
-            WHERE imd_g.id IS NULL
-              AND EXISTS (
-                  SELECT 1
-                  FROM res_groups g2
-                  JOIN ir_model_data imd2 ON imd2.model = 'res.groups' AND imd2.res_id = g2.id
-                  WHERE g2.category_id = g.category_id
-                    AND g2.id <> g.id
-                    AND (g2.name->>'en_US') = (g.name->>'en_US')
-              )
+            JOIN sale_groups sg
+                ON sg.category_id = g.category_id
+               AND (g.name->>'en_US') = sg.name_en
+            WHERE g.id <> sg.id
+              AND g.id NOT IN (SELECT id FROM sale_groups)
         );
 
     -- -------------------------------------------------------------------------
