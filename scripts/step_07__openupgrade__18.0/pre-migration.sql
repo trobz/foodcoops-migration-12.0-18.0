@@ -290,6 +290,51 @@ BEGIN
         END IF;
 
     -- -------------------------------------------------------------------------
+    -- tmt
+    -- -------------------------------------------------------------------------
+    ELSIF db_prefix = 'tmt' THEN
+
+        -- Duplicate res_groups records (same category_id + en_US name) without a
+        -- corresponding ir_model_data entry cause a unique constraint violation on
+        -- res_groups_name_uniq when Odoo loads fr_FR translations in 18.0, because
+        -- the translation update sets the same JSONB name on two different rows.
+        --
+        -- Step 1: move users from each duplicate group to its canonical group
+        --         (the one tracked by ir_model_data), if not already a member.
+        INSERT INTO res_groups_users_rel (gid, uid)
+        SELECT canonical_id, uid
+        FROM (
+            SELECT g2.id AS canonical_id, rgu.uid
+            FROM res_groups g
+            LEFT JOIN ir_model_data imd_g ON imd_g.model = 'res.groups' AND imd_g.res_id = g.id
+            JOIN res_groups g2 ON g2.category_id = g.category_id
+                               AND g2.id <> g.id
+                               AND (g2.name->>'en_US') = (g.name->>'en_US')
+            JOIN ir_model_data imd2 ON imd2.model = 'res.groups' AND imd2.res_id = g2.id
+            JOIN res_groups_users_rel rgu ON rgu.gid = g.id
+            LEFT JOIN res_groups_users_rel existing ON existing.gid = g2.id AND existing.uid = rgu.uid
+            WHERE imd_g.id IS NULL
+              AND existing.uid IS NULL
+        ) t;
+
+        -- Step 2: delete the duplicate groups (ON DELETE CASCADE handles rel tables).
+        DELETE FROM res_groups
+        WHERE id IN (
+            SELECT g.id
+            FROM res_groups g
+            LEFT JOIN ir_model_data imd_g ON imd_g.model = 'res.groups' AND imd_g.res_id = g.id
+            WHERE imd_g.id IS NULL
+              AND EXISTS (
+                  SELECT 1
+                  FROM res_groups g2
+                  JOIN ir_model_data imd2 ON imd2.model = 'res.groups' AND imd2.res_id = g2.id
+                  WHERE g2.category_id = g.category_id
+                    AND g2.id <> g.id
+                    AND (g2.name->>'en_US') = (g.name->>'en_US')
+              )
+        );
+
+    -- -------------------------------------------------------------------------
     -- lalouve
     -- -------------------------------------------------------------------------
     ELSIF db_prefix = 'lalouve' THEN
