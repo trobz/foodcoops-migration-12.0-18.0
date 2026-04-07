@@ -134,10 +134,13 @@ def migrate_partner_pos_email_receipt(env):
 _logger.info("Executing post-migration_pos_config.py script ...")
 
 env = env  # noqa: F821
-
-migrate_shared_cash_payment_methods(env)
-migrate_receipt_options(env)
-migrate_partner_pos_email_receipt(env)
+try:
+    migrate_shared_cash_payment_methods(env)
+    migrate_receipt_options(env)
+    migrate_partner_pos_email_receipt(env)
+except Exception as e:
+    _logger.error("Error migrating POS config: %s", e)
+    raise e
 
 env.cr.commit()
 _logger.info("Finished post-migration_pos_config.py script")
