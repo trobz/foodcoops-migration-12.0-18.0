@@ -43,7 +43,8 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-    
+        - OCA refs/pull/3213/head  # web_widget_image_webcam
+
 ./src/OCA/server-tools:
     defaults:
         depth: 300
@@ -274,7 +275,6 @@
         # - OCA refs/pull/1476/head  # pos_order_return_scrap
         - OCA 564c8046c9aadf1a9bcca86f80dc4129b1dfadb2  # pos_order_return_scrap to fix conflict
         - OCA refs/pull/1477/head  # pos_automatic_validation
-        - P-H-Phuc refs/pull/7/head  # pos_order_remove_line
         - OCA refs/pull/1480/head  # pos_access_right
         - OCA refs/pull/1485/head  # pos_automatic_cashdrawer
         - chien 20419b2d46a28aa8f1e86c25932b7860fa75afa9 # pos_payment_change_account
@@ -517,6 +517,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/488/head  # stock_inventory_valuation_report
 
 ./src/OCA/stock-logistics-barcode:
     defaults:

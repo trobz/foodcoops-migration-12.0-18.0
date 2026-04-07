@@ -102,8 +102,8 @@ WHERE name IN (
     -- 'coop_inventory_recurrent',
     'coop_mass_mailing_contact',
     -- 'coop_membership',
-    'coop_membership_extension_limit',
-    'coop_membership_forbidden',
+    -- 'coop_membership_extension_limit',
+    -- 'coop_membership_forbidden',
     'coop_numerical_keyboard',
     -- 'coop_parental_leave',
     -- 'coop_point_of_sale',
@@ -111,7 +111,7 @@ WHERE name IN (
     -- 'coop_produce',
     -- 'coop_product_coefficient',
     -- 'coop_project',
-    'coop_purchase',
+    -- 'coop_purchase',
     -- 'coop_shift',
     -- 'coop_shift_qualification',
     'coop_shit_counter_balance',
@@ -121,16 +121,16 @@ WHERE name IN (
     'edi_purchase_base',
     'edi_purchase_config',
     'edi_purchase_diapar',
-    'email_validation_check',
+    -- 'email_validation_check',
     'excel_import_export',
     'excel_import_export_demo',
     'field_image_preview',
-    'foodcoop_data_fr',
+    -- 'foodcoop_data_fr',
     'foodcoop_data_role',
     'foodcoop_data_role_functional_admin',
     'foodcoop_module',
     'invisible_menu_groups',
-    'l10n_fr_coop_default_pricetag',
+    -- 'l10n_fr_coop_default_pricetag',
     -- 'l10n_fr_fec_background',
     -- 'l10n_fr_fec_group_sale_purchase',
     'lalouve_custom',
@@ -170,16 +170,16 @@ WHERE name IN (
     -- 'purchase_compute_order',
     -- 'purchase_compute_order_min_package',
     -- 'purchase_package_qty',
-    'res_partner_account_move_line',
+    'res_partner_account_move_line',  -- Drop
     'stock_inventory_barcode',
     'stock_inventory_barcode_custom',
-    'stock_inventory_valuation_report',
-    'stock_scrap_origin',
+    -- 'stock_inventory_valuation_report',
+    'stock_scrap_origin',  -- Drop
     -- 'stock_scrap_product_report',
-    'web_export_xlsx',
-    'web_sheet_full_width',
-    'web_widget_image_webcam',
-    'web_widget_image_webcam_portrait',
+    'web_export_xlsx',  -- Drop
+    'web_sheet_full_width',  -- Drop
+    -- 'web_widget_image_webcam',
+    'web_widget_image_webcam_portrait',  -- Drop
     -- 'product_analytic'
 );
 
