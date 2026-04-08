@@ -53,10 +53,16 @@ def migrate_shared_cash_payment_methods(env):
                 _logger.info("Copied cash payment method: %s (ID: %d)", new_pm.name, new_pm.id)
                 
                 # Replace the old payment method with the new one in the config
-                config.write({
-                    'payment_method_ids': [(3, original_pm.id), (4, new_pm.id)]
-                })
-                _logger.info("Updated POS config %s to use new payment method", config.name)
+                try:
+                    config.write({
+                        'payment_method_ids': [(3, original_pm.id), (4, new_pm.id)]
+                    })
+                    _logger.info("Updated POS config %s to use new payment method", config.name)
+                except Exception as e:
+                    _logger.error("Error updating POS config %s to use new payment method: %s", config.name, e)
+                    # in case of error due to Error migrating POS config: Unable to modify this PoS Configuration because you can't modify Payment Methods while a session is open.
+                    # we keep it as is and the user will need to close the session and assign new cash payment method manually
+                    continue
 
     _logger.info("Finished processing shared cash payment methods")
 
