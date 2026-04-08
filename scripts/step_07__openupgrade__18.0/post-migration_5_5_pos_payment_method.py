@@ -15,6 +15,9 @@ def migrate_column_from_journal_to_payment_method(env, colname_aj, colname_ppm, 
     if not _column_exists(env, 'account_journal', colname_aj):
         _logger.info(f"Column {colname_aj} not found in account_journal, skipping")
         return
+    if not _column_exists(env, 'pos_payment_method', colname_ppm):
+        _logger.info(f"Column {colname_ppm} not found in pos_payment_method, skipping")
+        return
 
     # Update field in pos.payment.method from account.journal
     _logger.info(f"Processing payment methods: copying {colname_aj} from account.journal to {colname_ppm} in pos.payment.method")
