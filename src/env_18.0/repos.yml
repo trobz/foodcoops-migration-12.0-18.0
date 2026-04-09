@@ -420,6 +420,7 @@
     merges:
         - OCA 18.0
         - OCA refs/pull/922/head # account_bank_statement_reconcile_option
+        - OCA refs/pull/969/head # account_mass_reconcile
 
 ./src/OCA/account-fiscal-rule:
     defaults:
@@ -694,3 +695,13 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - trobz 18.0_dev
+
+./src/others/odoomates:
+    defaults:
+        depth: 300
+    remotes:
+        odoomates: git@github.com:odoomates/odooapps.git
+        trobz: git@github.com:trobz/odoomates.git
+    target: trobz merge-branch-foodcoop-18.0
+    merges:
+        - odoomates 18.0
