@@ -263,6 +263,8 @@ WHERE id IN (
 --     WHERE model='ir.action.act_window' AND module='coop_purchase' and name='action_invoice_refund'
 -- );
 
+-- Clean config_parameter on coop_print_badge to recompute new default value
+DELETE FROM ir_config_parameter WHERE key = 'reprint_change_field_ids';
 
 -- Dispatcher: run database-specific SQL based on current database name prefix.
 DO $$
