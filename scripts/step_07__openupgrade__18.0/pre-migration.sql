@@ -71,7 +71,7 @@ SET state = 'uninstalled'
 WHERE name IN (
     'account_asset_management_menu', 
     -- 'account_asset_management_xlsx',
-    -- 'account_bank_statement_import_caisse_epargne',
+    'account_bank_statement_import_caisse_epargne',
     -- 'account_bank_statement_reconcile_option',
     'account_bank_statement_reconciliation_report',
     -- 'account_export',
