@@ -179,6 +179,17 @@
     merges:
         - OCA 18.0
 
+./src/OCA/edi-framework:
+    defaults:
+        depth: 300
+    remotes:
+        OCA: git@github.com:OCA/edi-framework
+        trobz: git@github.com:trobz/edi-framework.git
+    target: trobz merge-branch-foodcoop-18.0
+    merges:
+        - OCA 18.0
+        - trobz refs/pull/1/head  # edi_purchase_diapar_oca
+
 ./src/OCA/social:
     defaults:
         depth: 300
