@@ -178,6 +178,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/1324/head  # base_edifact
 
 ./src/OCA/edi-framework:
     defaults:
@@ -188,6 +189,8 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
+        - OCA refs/pull/180/head  # edi_purchase_oca
+        - OCA d2585b14ef006b57e108f5ad8696c5f0ee8e6f82  # edi_purchase_edifact_oca
         - trobz refs/pull/1/head  # edi_purchase_diapar_oca
 
 ./src/OCA/social:
