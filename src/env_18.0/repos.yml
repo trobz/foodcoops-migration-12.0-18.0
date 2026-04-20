@@ -190,7 +190,7 @@
     merges:
         - OCA 18.0
         - OCA refs/pull/180/head  # edi_purchase_oca
-        - OCA d2585b14ef006b57e108f5ad8696c5f0ee8e6f82  # edi_purchase_edifact_oca
+        - OCA 810c10fb629ed65b8e170aa217d26a6eb5d046de  # edi_purchase_edifact_oca
         - trobz refs/pull/1/head  # edi_purchase_diapar_oca
 
 ./src/OCA/social:
