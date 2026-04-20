@@ -291,7 +291,7 @@
         - OCA refs/pull/1477/head  # pos_automatic_validation
         - OCA refs/pull/1480/head  # pos_access_right
         - OCA refs/pull/1485/head  # pos_automatic_cashdrawer
-        - chien 20419b2d46a28aa8f1e86c25932b7860fa75afa9 # pos_payment_change_account
+        - chien 14f8c3de9af86cbdd4e984671dc9d8eebac891ab # pos_payment_change_account
         - chien refs/pull/13/head  # pos_payment_credit
 
 ./src/OCA/event:
