@@ -2,12 +2,6 @@
 
 UPDATE ir_cron SET active = FALSE;
 
--- set no update = false to create missing uom data if possible
-UPDATE ir_model_data
-SET noupdate = false
-WHERE module = 'uom'
-  AND model = 'uom.uom';
-
 DELETE FROM ir_mail_server;
 DELETE FROM fetchmail_server;
 DELETE FROM ir_attachment WHERE url LIKE '/web/content/%';
