@@ -6,3 +6,11 @@
 -- calendar/14.0.1.0/post-migration.py create_recurrent_events when
 -- _apply_recurrence copies event values to recreate recurrent events.
 UPDATE calendar_event SET x_location = NULL WHERE x_location = 'tmt';
+
+-- Mark UoM data as noupdate to prevent Odoo from re-applying uom_data.xml during migration.
+-- Databases where a UoM category has no reference unit will fail with
+-- _check_category_reference_uniqueness when Odoo loads a 'bigger'/'smaller' unit for that category.
+UPDATE ir_model_data
+SET noupdate = true
+WHERE module = 'uom'
+  AND model IN ('uom.uom', 'uom.category');
