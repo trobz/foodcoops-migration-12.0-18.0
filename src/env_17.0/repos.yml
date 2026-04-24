@@ -155,6 +155,15 @@
     merges:
         - OCA 17.0
 
+./src/OCA/edi-framework:
+    defaults:
+        depth: 1
+    remotes:
+        OCA: git@github.com:OCA/edi-framework
+    target: OCA 17.0-target
+    merges:
+        - OCA 17.0
+
 ./src/OCA/social:
     defaults:
         depth: 1
