@@ -322,6 +322,14 @@ BEGIN
             WHERE g.id <> sg.id
               AND g.id NOT IN (SELECT id FROM sale_groups)
         );
+    -- -------------------------------------------------------------------------
+    -- otsokop
+    -- -------------------------------------------------------------------------
+    ELSIF db_prefix = 'otsokop' THEN
+        UPDATE ir_cron
+        SET active = true
+        WHERE id = (SELECT res_id from ir_model_data where module='stock' and model='ir.cron' and name='ir_cron_scheduler_action');
+
 
     -- -------------------------------------------------------------------------
     -- lalouve
