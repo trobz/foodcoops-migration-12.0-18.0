@@ -1,7 +1,33 @@
 
-update ir_model_data 
+update ir_model_data
 set noupdate='t'
 where name in ('location_inventory', 'stock_location_scrapped') and module='stock';
+
+-- Create missing ir_model_data entry for the ir.actions.server that is delegated from
+-- stock.ir_cron_scheduler_action. The entry (stock.ir_cron_scheduler_action_ir_actions_server)
+-- is only auto-created on record CREATE, never on UPDATE, so databases migrated through
+-- earlier versions never received it. The 18.0 stock_rule_views.xml and mrp module both
+-- reference it in menu items, causing a ParseError if the entry is absent.
+INSERT INTO ir_model_data (name, module, model, res_id, noupdate, date_init, date_update)
+SELECT
+    'ir_cron_scheduler_action_ir_actions_server',
+    'stock',
+    'ir.actions.server',
+    ic.ir_actions_server_id,
+    false,
+    NOW(),
+    NOW()
+FROM ir_model_data imd
+JOIN ir_cron ic ON ic.id = imd.res_id
+WHERE imd.module = 'stock'
+  AND imd.name = 'ir_cron_scheduler_action'
+  AND imd.model = 'ir.cron'
+  AND ic.ir_actions_server_id IS NOT NULL
+  AND NOT EXISTS (
+      SELECT 1 FROM ir_model_data
+      WHERE module = 'stock'
+        AND name = 'ir_cron_scheduler_action_ir_actions_server'
+  );
 
 -- drop array_concat_agg in postgres12, to migrate to postgres14+
 -- # Since Postgres 14, the argument to array_cat must be
