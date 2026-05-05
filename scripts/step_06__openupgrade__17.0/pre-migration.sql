@@ -23,7 +23,7 @@
     JOIN uom_uom AS sml_uom ON sml_uom.id = sml.product_uom_id
     WHERE pt.uom_id <> sml.product_uom_id
       AND pt_uom.category_id <> sml_uom.category_id
-) TO '/tmp/mismatch_export'
+) TO '/tmp/mismatch_stock_move_line_uom_export';
 
 -- 2. Update lines to fix the UOM mismatch
 -- The update statement remains below.
@@ -60,7 +60,7 @@ WHERE sml.product_id = pp.id
     JOIN uom_uom AS sol_uom ON sol_uom.id = sol.product_uom
     WHERE pt.uom_id <> sol.product_uom
       AND pt_uom.category_id <> sol_uom.category_id
-) TO '/tmp/mismatch_export_sol'
+) TO '/tmp/mismatch_sale_order_line_uom_sol';
 
 -- 4. Update lines to fix the UOM mismatch for sale_order_line
 ALTER TABLE sale_order_line ADD COLUMN IF NOT EXISTS old_uom_id integer;
