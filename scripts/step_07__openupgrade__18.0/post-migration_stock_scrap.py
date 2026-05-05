@@ -23,7 +23,9 @@ if not existed and table_exists:
     for (origin_id, origin_name) in origins:
         if not origin_name:
             origin_name = f"Origin Old ID: {origin_id}"
-        tag = ReasonTag.create({"name": origin_name})
+        tag = ReasonTag.search([("name", "=", origin_name)], limit=1)
+        if not tag:
+            tag = ReasonTag.create({"name": origin_name})
         sql = f"SELECT id FROM stock_scrap WHERE scrap_origin_id={origin_id}"
         env.cr.execute(sql)
         scraps = env.cr.fetchall()
