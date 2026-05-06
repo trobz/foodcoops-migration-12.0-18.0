@@ -38,3 +38,52 @@ WHERE module = 'base'
         SELECT 1 FROM ir_module_module
         WHERE name = REPLACE(ir_model_data.name, 'module_', '')
     );
+
+-- Dispatcher: run database-specific SQL based on current database name prefix.
+DO $$
+DECLARE
+    db_prefix TEXT := split_part(current_database(), '_', 1);
+BEGIN
+
+    -- -------------------------------------------------------------------------
+    -- sqq
+    -- -------------------------------------------------------------------------
+    IF db_prefix = 'sqq' THEN
+        -- Deactivate custom views that target the obsolete //t[@t-set='head_website'] xpath.
+        -- This t-set block was removed from website.layout before Odoo 18; keeping these views
+        -- active causes a ParseError / registry failure when Odoo 18 loads the website module.
+        -- Deactivating early (at 13.0) prevents them from being re-activated in later steps.
+        UPDATE ir_ui_view SET active = false
+        WHERE arch_db::text LIKE '%//t[@t-set=''head_website'']%'
+        AND (
+            -- No xml_id at all (truly custom, orphaned view)
+            id NOT IN (SELECT res_id FROM ir_model_data WHERE model = 'ir.ui.view')
+            OR
+            -- Has an xml_id but from a module that is not currently installed
+            id IN (
+                SELECT res_id FROM ir_model_data
+                WHERE model = 'ir.ui.view'
+                    AND module NOT IN (SELECT name FROM ir_module_module WHERE state = 'installed')
+            )
+        );
+
+        -- select name,id, active,arch_db from ir_ui_view where 
+        -- arch_db::text LIKE '%//t[@t-set=''head_website'']%'
+        --   AND (
+        --       -- No xml_id at all (truly custom, orphaned view)
+        --       id NOT IN (SELECT res_id FROM ir_model_data WHERE model = 'ir.ui.view')
+        --     --   OR
+        --     --   -- Has an xml_id but from a module that is not currently installed
+        --     --   id IN (
+        --     --       SELECT res_id FROM ir_model_data
+        --     --       WHERE model = 'ir.ui.view'
+        --     --         AND module NOT IN (SELECT name FROM ir_module_module WHERE state = 'installed')
+        --     --   )
+        --   );
+    ELSE
+        RAISE NOTICE 'No specific pre-migration SQL for prefix: %', db_prefix;
+
+    END IF;
+
+END $$;
+

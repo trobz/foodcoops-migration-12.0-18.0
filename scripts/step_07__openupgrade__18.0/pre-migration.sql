@@ -266,7 +266,7 @@ WHERE id NOT IN (
 );
 
 -- disable specific modules
-UPDATE ir_ui_view SET active=false 
+UPDATE ir_ui_view SET active=false
 WHERE id IN (
     SELECT res_id
     FROM ir_model_data
