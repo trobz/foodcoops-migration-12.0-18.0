@@ -2,6 +2,10 @@
 
 UPDATE ir_cron SET active = FALSE;
 
+-- Fix ir.translation records with invalid state value 'false' (string).
+-- These were stored as the Python repr of False instead of a valid selection value.
+UPDATE ir_translation SET state = 'to_translate' WHERE state = 'false';
+
 DELETE FROM ir_mail_server;
 DELETE FROM fetchmail_server;
 DELETE FROM ir_attachment WHERE url LIKE '/web/content/%';
