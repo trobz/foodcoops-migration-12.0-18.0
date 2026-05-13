@@ -276,7 +276,7 @@
         - OCA 18.0
         # - OCA refs/pull/1403/head  # pos_product_multi_barcode: already merged in OCA 18.0
         - OCA refs/pull/1406/head  # pos_price_to_weight
-        - OCA refs/pull/1411/head  # pos_report_session_summary
+        # - OCA refs/pull/1411/head  # Merged
         - OCA refs/pull/1412/head  # pos_empty_home
         - OCA refs/pull/1413/head  # pos_customer_required
         - OCA refs/pull/1428/head  # pos_quick_logout
