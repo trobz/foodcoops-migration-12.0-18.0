@@ -91,3 +91,10 @@ BEGIN
 
 END $$;
 
+
+-- Clean some modules
+UPDATE ir_module_module
+SET state = 'uninstalled'
+WHERE name IN (
+    'web_environment_ribbon'
+);
