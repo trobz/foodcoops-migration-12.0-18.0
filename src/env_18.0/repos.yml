@@ -406,11 +406,12 @@
         OCA: git@github.com:OCA/account-analytic
         trobz: git@github.com:trobz/account-analytic.git
         P-H-Phuc: git@github.com:P-H-Phuc/account-analytic.git
+        chien: git@github.com:nguyenminhchien/account-analytic.git
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-        - OCA refs/pull/850/head # product_analytic
         - P-H-Phuc 1b94756d08ad6a8e78426fcbbc7af305b83a8dd2 # product_analytic: Analytic Distribution Model in product.template
+        - chien refs/pull/2/head # product_analytic_pos
 
 ./src/OCA/account-payment:
     defaults:
