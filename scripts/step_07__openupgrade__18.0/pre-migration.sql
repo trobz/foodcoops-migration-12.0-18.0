@@ -274,12 +274,12 @@ WHERE id IN (
 );
 
 -- deleted un-migrated menu
-UPDATE ir_ui_menu set active=false
-WHERE id IN (
-    SELECT res_id
-    FROM ir_model_data
-    WHERE model='ir.ui.menu' AND module IN ('coop_purchase', 'dummy')
-);
+-- UPDATE ir_ui_menu set active=false
+-- WHERE id IN (
+--     SELECT res_id
+--     FROM ir_model_data
+--     WHERE model='ir.ui.menu' AND module IN ('coop_purchase', 'dummy')
+-- );
 
 
 -- -- coop_purchase.action_invoice_refund
