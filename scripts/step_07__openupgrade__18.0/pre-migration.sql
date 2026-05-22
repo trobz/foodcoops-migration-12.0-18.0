@@ -245,25 +245,25 @@ $$;
 -- Disable all views excepting standard ones already migrated by Odoo SA.
 -- Therefore, views from 'base' addon have to be enable as first inheriting
 -- views are based on them.
-UPDATE ir_ui_view SET active=false
-WHERE id NOT IN (
-    SELECT res_id
-    FROM ir_model_data
-    WHERE model='ir.ui.view'
-    AND module IN (
-        SELECT name FROM ir_module_module WHERE state='installed'
-    )
-);
+-- UPDATE ir_ui_view SET active=false
+-- WHERE id NOT IN (
+--     SELECT res_id
+--     FROM ir_model_data
+--     WHERE model='ir.ui.view'
+--     AND module IN (
+--         SELECT name FROM ir_module_module WHERE state='installed'
+--     )
+-- );
 
-UPDATE ir_ui_menu SET active=false
-WHERE id NOT IN (
-    SELECT res_id
-    FROM ir_model_data
-    WHERE model='ir.ui.menu'
-    AND module IN (
-        SELECT name FROM ir_module_module WHERE state='installed'
-    )
-);
+-- UPDATE ir_ui_menu SET active=false
+-- WHERE id NOT IN (
+--     SELECT res_id
+--     FROM ir_model_data
+--     WHERE model='ir.ui.menu'
+--     AND module IN (
+--         SELECT name FROM ir_module_module WHERE state='installed'
+--     )
+-- );
 
 -- disable specific modules
 UPDATE ir_ui_view SET active=false
