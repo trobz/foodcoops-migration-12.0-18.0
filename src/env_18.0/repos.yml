@@ -189,7 +189,6 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-        - OCA refs/pull/180/head  # edi_purchase_oca
         - OCA 810c10fb629ed65b8e170aa217d26a6eb5d046de  # edi_purchase_edifact_oca
         - trobz refs/pull/1/head  # edi_purchase_diapar_oca
 
@@ -274,9 +273,7 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-        # - OCA refs/pull/1403/head  # pos_product_multi_barcode: already merged in OCA 18.0
         - OCA refs/pull/1406/head  # pos_price_to_weight
-        # - OCA refs/pull/1411/head  # Merged
         - OCA refs/pull/1412/head  # pos_empty_home
         - OCA refs/pull/1413/head  # pos_customer_required
         - OCA refs/pull/1428/head  # pos_quick_logout
@@ -284,15 +281,14 @@
         - OCA refs/pull/1459/head  # pos_transfer_account
         - OCA refs/pull/1460/head  # pos_ticket_send_by_mail
         - OCA refs/pull/1473/head  # pos_order_return
-        - OCA refs/pull/1474/head  # pos_payment_terminal
         - OCA refs/pull/1475/head  # pos_payment_terminal_return
-        # - OCA refs/pull/1476/head  # pos_order_return_scrap
         - OCA 564c8046c9aadf1a9bcca86f80dc4129b1dfadb2  # pos_order_return_scrap to fix conflict
         - OCA refs/pull/1477/head  # pos_automatic_validation
         - OCA refs/pull/1480/head  # pos_access_right
         - OCA refs/pull/1485/head  # pos_automatic_cashdrawer
         - chien 14f8c3de9af86cbdd4e984671dc9d8eebac891ab # pos_payment_change_account
         - chien refs/pull/13/head  # pos_payment_credit
+        - P-H-Phuc 8485256c3a35e897eea5402dc60ad9fe07110a05  # pos_report_session_summary_account
 
 ./src/OCA/event:
     defaults:

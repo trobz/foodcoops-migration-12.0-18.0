@@ -22,4 +22,20 @@ if bounce_alias_12:
         # Else: reset the key as it's from 12.0
         bounce_alias_12.key = "mail.bounce.alias"
 
+pos_report_session_summary = env["ir.module.module"].search([
+    ("name", "=", "pos_report_session_summary"),
+    ("state", "=", "installed"),
+], limit=1)
+if pos_report_session_summary:
+    pos_report_session_summary_account = env["ir.module.module"].search([
+        ("name", "=", "pos_report_session_summary_account")
+    ], limit=1)
+    if pos_report_session_summary_account and pos_report_session_summary_account.state != "installed":
+        _logger.info(
+            "Set module %s state to installed because %s is installed ...",
+            pos_report_session_summary_account.name,
+            pos_report_session_summary.name,
+        )
+        pos_report_session_summary_account.state = "installed"
+
 env.cr.commit()
