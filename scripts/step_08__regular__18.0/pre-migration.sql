@@ -56,6 +56,71 @@ BEGIN
         );
 
     -- -------------------------------------------------------------------------
+    -- lacoopsurmer
+    -- -------------------------------------------------------------------------
+    ELSIF db_prefix = 'lacoopsurmer' THEN
+
+        -- Keep the canonical portal views that are linked to ir_model_data and
+        -- remove any duplicate orphaned database views.
+        UPDATE ir_ui_view
+        SET inherit_id = canonical.id
+        FROM (
+            SELECT v.id
+            FROM ir_ui_view v
+            JOIN ir_model_data imd
+                ON imd.model = 'ir.ui.view'
+               AND imd.res_id = v.id
+            WHERE v.key IN (
+                'payment.portal_my_home_payment',
+                'account.portal_my_home_invoice',
+                'project.portal_my_home'
+            )
+        ) AS canonical
+        WHERE inherit_id IN (
+            SELECT v.id
+            FROM ir_ui_view v
+            LEFT JOIN ir_model_data imd
+                ON imd.model = 'ir.ui.view'
+               AND imd.res_id = v.id
+            WHERE v.key IN (
+                'payment.portal_my_home_payment',
+                'account.portal_my_home_invoice',
+                'project.portal_my_home'
+            )
+              AND imd.id IS NULL
+        );
+
+        DELETE FROM ir_ui_view_custom
+        WHERE ref_id IN (
+            SELECT v.id
+            FROM ir_ui_view v
+            LEFT JOIN ir_model_data imd
+                ON imd.model = 'ir.ui.view'
+               AND imd.res_id = v.id
+            WHERE v.key IN (
+                'payment.portal_my_home_payment',
+                'account.portal_my_home_invoice',
+                'project.portal_my_home'
+            )
+              AND imd.id IS NULL
+        );
+
+        DELETE FROM ir_ui_view
+        WHERE id IN (
+            SELECT v.id
+            FROM ir_ui_view v
+            LEFT JOIN ir_model_data imd
+                ON imd.model = 'ir.ui.view'
+               AND imd.res_id = v.id
+            WHERE v.key IN (
+                'payment.portal_my_home_payment',
+                'account.portal_my_home_invoice',
+                'project.portal_my_home'
+            )
+              AND imd.id IS NULL
+        );
+
+    -- -------------------------------------------------------------------------
     -- sqq
     -- -------------------------------------------------------------------------
     ELSIF db_prefix = 'sqq' THEN
