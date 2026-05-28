@@ -1,4 +1,41 @@
 
+-- printnode_base is a 12.0-only module and is skipped in 18.0.
+-- Relax legacy NOT NULL constraints on its orphaned tables so the remaining
+-- data can survive the final regular upgrade without schema enforcement from
+-- the removed module.
+DO $$
+DECLARE
+    legacy_column RECORD;
+BEGIN
+    FOR legacy_column IN
+        WITH legacy_models AS (
+            SELECT REPLACE(model, '.', '_') AS table_name
+            FROM ir_model
+            WHERE model LIKE 'printnode.%'
+               OR model IN ('shipping.label', 'shipping.label.document')
+        )
+        SELECT cols.table_name, cols.column_name
+        FROM information_schema.columns AS cols
+        JOIN legacy_models AS models
+            ON models.table_name = cols.table_name
+        WHERE cols.table_schema = 'public'
+          AND cols.is_nullable = 'NO'
+          AND cols.column_name NOT IN (
+              'id',
+              'create_uid',
+              'create_date',
+              'write_uid',
+              'write_date'
+          )
+    LOOP
+        EXECUTE format(
+            'ALTER TABLE %I ALTER COLUMN %I DROP NOT NULL',
+            legacy_column.table_name,
+            legacy_column.column_name
+        );
+    END LOOP;
+END $$;
+
 -- Dispatcher: run database-specific SQL based on current database name prefix.
 DO $$
 DECLARE

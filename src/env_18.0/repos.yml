@@ -289,6 +289,7 @@
         - chien 14f8c3de9af86cbdd4e984671dc9d8eebac891ab # pos_payment_change_account
         - chien refs/pull/13/head  # pos_payment_credit
         - P-H-Phuc 8485256c3a35e897eea5402dc60ad9fe07110a05  # pos_report_session_summary_account
+        - P-H-Phuc refs/pull/15/head # pos_meal_voucher
 
 ./src/OCA/event:
     defaults:
