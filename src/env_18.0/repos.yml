@@ -290,6 +290,7 @@
         - chien refs/pull/13/head  # pos_payment_credit
         - P-H-Phuc 8485256c3a35e897eea5402dc60ad9fe07110a05  # pos_report_session_summary_account
         - P-H-Phuc refs/pull/15/head # pos_meal_voucher
+        - P-H-Phuc refs/pull/17/head # pos_require_product_quantity
 
 ./src/OCA/event:
     defaults:
@@ -608,6 +609,16 @@
         - OCA 18.0
         - OCA refs/pull/95/head  # mass_mailing_access
         - OCA refs/pull/97/head  # mail_template_conditional_attachment
+
+./src/OCA/mass-mailing:
+    defaults:
+        depth: 300
+    remotes:
+        OCA: git@github.com:OCA/mass-mailing
+        trobz: git@github.com:trobz/mass-mailing
+    target: trobz merge-branch-foodcoop-18.0
+    merges:
+        - OCA 18.0
 
 # ./src/addons/druidoo-addons:
 #     defaults:
