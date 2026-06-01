@@ -30,5 +30,8 @@ geoip2
 # Required by the module(s): fs_storage
 fsspec>=2025.3.0
 
+# Required by the module(s): base_edifact
+pydifact
+
 # Required by the module(s): account_statement_import_ofx
 ofxparse
