@@ -27,5 +27,8 @@ xlrd
 # Required by the module(s): website
 geoip2
 
+# Required by the module(s): fs_storage
+fsspec>=2024.5.0
+
 # Required by the module(s): account_statement_import_ofx
 ofxparse

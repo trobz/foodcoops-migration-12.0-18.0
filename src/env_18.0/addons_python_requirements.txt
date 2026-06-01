@@ -18,14 +18,17 @@ python-barcode
 # Required by the module(s): l10n_fr_department
 unidecode
 
+# Required by the module(s): mis_builder
+openupgradelib
+
 # Required by the module(s): queue_job
 requests
 
 # Required by the module(s): website
 geoip2
 
+# Required by the module(s): fs_storage
+fsspec>=2024.5.0
+
 # Required by the module(s): account_statement_import_ofx
 ofxparse
-
-# Required by the module(s): server_action_mass_edit
-openupgradelib

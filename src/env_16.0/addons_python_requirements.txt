@@ -21,5 +21,8 @@ unidecode
 # Required by the module(s): queue_job
 requests
 
+# Required by the module(s): fs_storage
+fsspec>=2024.5.0
+
 # Required by the module(s): account_statement_import_ofx
 ofxparse
