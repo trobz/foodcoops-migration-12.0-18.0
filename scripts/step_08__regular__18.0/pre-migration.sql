@@ -47,6 +47,18 @@ BEGIN
     -- sqq_vdm
     -- -------------------------------------------------------------------------
     IF db_prefix_2 = 'sqq_vdm' THEN
+        UPDATE ir_ui_view
+        SET active = false
+        WHERE key = 'website_sale.products'
+            AND id IN (
+                    SELECT v.id
+                    FROM ir_ui_view v
+                    LEFT JOIN ir_model_data imd
+                            ON imd.model = 'ir.ui.view'
+                            AND imd.res_id = v.id
+                    WHERE v.key = 'website_sale.products'
+                        AND imd.id IS NULL
+            );
 
         -- Keep the canonical portal.frontend_layout view that is linked to
         -- ir_model_data and remove any duplicate orphaned database view.
