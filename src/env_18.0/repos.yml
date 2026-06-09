@@ -718,3 +718,13 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - odoomates 18.0
+
+./src/others/akretion:
+    defaults:
+        depth: 300
+    remotes:
+        akretion: git@github.com:akretion/fr-einvoicing.git
+        trobz: git@github.com:trobz/fr-einvoicing.git
+    target: trobz merge-branch-foodcoop-18.0
+    merges:
+        - akretion 18.0
