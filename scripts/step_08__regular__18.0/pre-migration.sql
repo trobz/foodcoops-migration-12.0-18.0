@@ -60,6 +60,29 @@ BEGIN
                         AND imd.id IS NULL
             );
 
+        WITH RECURSIVE orphan_website_sale_product_views AS (
+            SELECT v.id
+            FROM ir_ui_view v
+            LEFT JOIN ir_model_data imd
+                ON imd.model = 'ir.ui.view'
+               AND imd.res_id = v.id
+            WHERE v.key = 'website_sale.product'
+              AND imd.id IS NULL
+        ), website_sale_product_view_descendants AS (
+            SELECT id
+            FROM orphan_website_sale_product_views
+
+            UNION
+
+            SELECT child.id
+            FROM ir_ui_view child
+            JOIN website_sale_product_view_descendants parent
+                ON child.inherit_id = parent.id
+        )
+        UPDATE ir_ui_view
+        SET active = false
+        WHERE id IN (SELECT id FROM website_sale_product_view_descendants);
+
         -- Keep the canonical portal.frontend_layout view that is linked to
         -- ir_model_data and remove any duplicate orphaned database view.
         UPDATE ir_ui_view
@@ -177,6 +200,9 @@ BEGIN
         UPDATE ir_model_data
         SET noupdate = 't'
         WHERE name='product_category_Souscriptions' and model='product.category';
+
+        UPDATE website
+        SET ecommerce_access = 'logged_in';
 
     -- -------------------------------------------------------------------------
     -- No match
