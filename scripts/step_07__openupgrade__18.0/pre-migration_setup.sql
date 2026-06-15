@@ -23,5 +23,9 @@ SET state = 'installed'
 WHERE name IN (
     'bundle_' || split_part(current_database(), '_', 1),
     'pos_order_remove_line',
-    'spreadsheet_dashboard' -- depends on coop_membershift
+    'spreadsheet_dashboard', -- depends on coop_membershift
+    'coop_web',
+    'coop_pos_access',
+    'coop_pos_return',
+    'coop_pos_search'
 )
