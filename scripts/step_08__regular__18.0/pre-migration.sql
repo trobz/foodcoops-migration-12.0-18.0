@@ -213,3 +213,17 @@ BEGIN
     END IF;
 
 END $$;
+
+
+-- Set the new modules to be installed, so they can be upgraded during the migration
+UPDATE ir_module_module
+SET state = 'installed'
+WHERE name IN (
+    'pos_order_remove_line',
+    'spreadsheet_dashboard', -- depends on coop_membershift
+    'web_chatter_position',
+    'coop_web',
+    'coop_pos_access',
+    'coop_pos_return',
+    'coop_pos_search'
+);
