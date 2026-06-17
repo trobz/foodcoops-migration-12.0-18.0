@@ -227,3 +227,13 @@ WHERE name IN (
     'coop_pos_return',
     'coop_pos_search'
 );
+
+UPDATE ir_module_module AS imm
+SET state = 'installed'
+WHERE imm.name = 'bundle_lalouve'
+  AND EXISTS (
+      SELECT 1
+      FROM ir_module_module AS dep
+      WHERE dep.name = 'lalouve_custom'
+        AND dep.state = 'installed'
+  );
