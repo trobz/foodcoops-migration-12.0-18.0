@@ -263,7 +263,18 @@ def purge_migration_sql_objects(env):
     ]
     for query in queries:
         env.cr.execute(query)
-    
+
+def drop_openupgrade_legacy_13_0_binding_type(env):
+    # Clean the SQL objects created earlier in pre-core to handle upgrade of views
+    queries = [
+        """
+        ALTER TABLE ir_actions 
+        DROP COLUMN IF EXISTS openupgrade_legacy_13_0_binding_type CASCADE;
+        """,
+    ]
+    for query in queries:
+        env.cr.execute(query)
+
 def clean_unavailable_modules(env):
     """Clean unavailable modules
 
@@ -340,6 +351,7 @@ def cleanup_home_actions_from_users(env):
     env.cr.execute(query)
 
 purge_migration_sql_objects(env=env)
+drop_openupgrade_legacy_13_0_binding_type(env=env)
 database_cleanup(env=env)
 clean_unavailable_modules(env=env)
 repair_missing_menu_icons(env=env)
