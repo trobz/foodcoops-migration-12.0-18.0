@@ -13,7 +13,7 @@ pysftp
 cryptography
 
 # Required by the module(s): barcodes_generator_abstract
-python-barcode
+python-barcode==0.16.1
 
 # Required by the module(s): l10n_fr_department
 unidecode

@@ -26,7 +26,7 @@ xlwt
 openpyxl
 raven
 # From addons/oca-stock-logistics-barcode/requirements.txt
-python-barcode
+python-barcode==0.16.1
 # From addons/oca-server-auth/requirements.txt
 #python-u2flib-server
 #zxcvbn
