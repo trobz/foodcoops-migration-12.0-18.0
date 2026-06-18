@@ -116,8 +116,8 @@
     merges:
         - OCA 18.0
         - OCA refs/pull/2892/head  # purchase_package_qty
-        - OCA 9c6ab49baa3bfd5f13b98808c44862e2dc003d0f  # purchase_compute_order
-        - OCA 23dc963131e010708ba38021e969c7d7560e133d  # purchase_compute_order_min_package
+        - OCA eaddd83d0b8ac530d37ce6e9fea3b221d13fc599  # purchase_compute_order
+        - OCA e3388c6ce28874fc4a93853a80b9d0e4cebbeb6e  # purchase_compute_order_min_package
 
 ./src/OCA/purchase-reporting:
     defaults:
@@ -361,7 +361,6 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-        - OCA refs/pull/1870/head # account_invoice_merge
         - OCA refs/pull/2129/head # account_invoice_refund_option
         - OCA refs/pull/2112/head # account_partner_journal
         - OCA refs/pull/2158/head # partner_account_move_line
