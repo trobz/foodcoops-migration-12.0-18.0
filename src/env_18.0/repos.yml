@@ -175,10 +175,11 @@
     remotes:
         OCA: git@github.com:OCA/edi
         trobz: git@github.com:trobz/edi.git
+        phuc: git@github.com:P-H-Phuc/edi.git
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-        - OCA refs/pull/1324/head  # base_edifact
+        - phuc refs/pull/1/head  # base_edifact
 
 ./src/OCA/edi-framework:
     defaults:
