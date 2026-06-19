@@ -77,7 +77,7 @@ unittest-xml-reporting
 
 # From edi repo
 factur-x<=3.1
-pypdf
+pypdf==3.1.0
 PyPDF2
 PyYAML
 
