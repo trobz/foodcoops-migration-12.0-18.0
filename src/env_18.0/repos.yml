@@ -116,7 +116,7 @@
     merges:
         - OCA 18.0
         - OCA refs/pull/2892/head  # purchase_package_qty
-        - OCA eaddd83d0b8ac530d37ce6e9fea3b221d13fc599  # purchase_compute_order
+        - OCA 29ef008153499ae2f19ea27936ffb8f25b94fc5a  # purchase_compute_order
         - OCA e3388c6ce28874fc4a93853a80b9d0e4cebbeb6e  # purchase_compute_order_min_package
 
 ./src/OCA/purchase-reporting:

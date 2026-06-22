@@ -79,3 +79,17 @@ WHERE module = 'pos_payment_credit';
 UPDATE ir_model_data
 SET name = 'module_pos_payment_credit_amount'
 WHERE name = 'module_pos_payment_credit';
+
+
+-- Rename pos_automatic_cashdrawer to pos_automatic_cashdrawer_cashlogy
+UPDATE ir_module_module
+SET name = 'pos_automatic_cashdrawer_cashlogy'
+WHERE name = 'pos_automatic_cashdrawer';
+
+UPDATE ir_model_data
+SET module = 'pos_automatic_cashdrawer_cashlogy'
+WHERE module = 'pos_automatic_cashdrawer';
+
+UPDATE ir_model_data
+SET name = 'module_pos_automatic_cashdrawer_cashlogy'
+WHERE name = 'module_pos_automatic_cashdrawer';
