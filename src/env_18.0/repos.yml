@@ -472,10 +472,12 @@
     remotes:
         OCA: git@github.com:OCA/bank-statement-import
         trobz: git@github.com:trobz/bank-statement-import.git
+        phuc: git@github.com:P-H-Phuc/bank-statement-import.git
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
         - OCA refs/pull/836/head # bank_statement_import_caisse_epargne
+        - phuc refs/pull/3/head # bank_statement_import_caisse_epargne: improve version D field mapping
   
 ./src/OCA/margin-analysis:
     defaults:
