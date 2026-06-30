@@ -24,7 +24,15 @@ def unlink_website_menu_by_url(env):
         fixed_count += 1
     _logger.info("Unlinked %d website menus", fixed_count)
 
+def deactivate_contactus_button(env):
+    # Deactivate the view website.header_call_to_action if exists
+    view = env["ir.ui.view"].search([("key", "=", "website.header_call_to_action")], limit=1)
+    if view:
+        view.active = False
+        _logger.info("Deactivated view website.header_call_to_action")
+
 unlink_website_menu_by_url(env=env)
+deactivate_contactus_button(env=env)
 
 env.cr.commit()
 _logger.info("Finished post-migration_2_1_unlink_website_menu.py script")
