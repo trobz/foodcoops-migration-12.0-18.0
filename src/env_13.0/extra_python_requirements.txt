@@ -62,3 +62,4 @@ pyyaml
 xmlschema
 
 pycups
+Pillow==6.1.0
