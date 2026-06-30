@@ -1,515 +1,515 @@
-##############################################################################
-## Odoo Repository
-##############################################################################
+# ##############################################################################
+# ## Odoo Repository
+# ##############################################################################
 
-./src/odoo:
-    defaults:
-        depth: 300
-    remotes:
-        odoo: https://github.com/odoo/odoo
-        trobz: git@gitlab.trobz.com:odoo/odoo.git
-    target: trobz 18.0-target
-    merges:
-        - odoo 18.0
-        - trobz refs/merge-requests/33/head
+# ./src/odoo:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         odoo: https://github.com/odoo/odoo
+#         trobz: git@gitlab.trobz.com:odoo/odoo.git
+#     target: trobz 18.0-target
+#     merges:
+#         - odoo 18.0
+#         - trobz refs/merge-requests/33/head
 
-##############################################################################
-## OpenUpgrade Repository
-##############################################################################
+# ##############################################################################
+# ## OpenUpgrade Repository
+# ##############################################################################
 
-./src/openupgrade:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: https://github.com/OCA/OpenUpgrade
-        trobz: git@github.com:trobz/OpenUpgrade.git
-        trobz_gitlab: git@gitlab.trobz.com:odoo/openupgrade.git
-    target: trobz_gitlab merge-branch-foodcoop-18.0
-    merges:
-        - trobz 18.0
-        - trobz refs/pull/4/head
-        - trobz_gitlab refs/merge-requests/1/head
+# ./src/openupgrade:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: https://github.com/OCA/OpenUpgrade
+#         trobz: git@github.com:trobz/OpenUpgrade.git
+#         trobz_gitlab: git@gitlab.trobz.com:odoo/openupgrade.git
+#     target: trobz_gitlab merge-branch-foodcoop-18.0
+#     merges:
+#         - trobz 18.0
+#         - trobz refs/pull/4/head
+#         - trobz_gitlab refs/merge-requests/1/head
 
-##############################################################################
-## OCA Repositories
-##############################################################################
+# ##############################################################################
+# ## OCA Repositories
+# ##############################################################################
     
-./src/OCA/web:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: https://github.com/OCA/web
-        trobz: git@github.com:trobz/web.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/3213/head  # web_widget_image_webcam
-
-./src/OCA/server-tools:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: https://github.com/OCA/server-tools
-        trobz: git@github.com:trobz/server-tools.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/product-attribute:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/product-attribute
-        trobz: git@github.com:trobz/product-attribute.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/2143/head  # product_to_scale_bizerba
-        
-./src/OCA/product-variant:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/product-variant
-        trobz: git@github.com:trobz/product-variant.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        
-./src/OCA/partner-contact:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/partner-contact
-        trobz: git@github.com:trobz/partner-contact.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/sale-workflow:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/sale-workflow
-        trobz: git@github.com:trobz/sale-workflow.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/sale-reporting:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/sale-reporting
-        trobz: git@github.com:trobz/sale-reporting.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/purchase-workflow:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/purchase-workflow
-        trobz: git@github.com:trobz/purchase-workflow.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/2892/head  # purchase_package_qty
-        - OCA 29ef008153499ae2f19ea27936ffb8f25b94fc5a  # purchase_compute_order
-        - OCA e3388c6ce28874fc4a93853a80b9d0e4cebbeb6e  # purchase_compute_order_min_package
-
-./src/OCA/purchase-reporting:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/purchase-reporting
-        trobz: git@github.com:trobz/purchase-reporting.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
 # ./src/OCA/web:
 #     defaults:
 #         depth: 300
 #     remotes:
-#         OCA: git@github.com:OCA/web
+#         OCA: https://github.com/OCA/web
 #         trobz: git@github.com:trobz/web.git
 #     target: trobz merge-branch-foodcoop-18.0
 #     merges:
 #         - OCA 18.0
-
-# ./src/OCA/website:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@github.com:OCA/website
-#         trobz: git@github.com:trobz/web.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
-
-./src/OCA/website-themes:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/website-themes
-        trobz: git@github.com:trobz/website-themes.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/e-commerce:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/e-commerce
-        trobz: git@github.com:trobz/e-commerce.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/edi:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/edi
-        trobz: git@github.com:trobz/edi.git
-        phuc: git@github.com:P-H-Phuc/edi.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - phuc refs/pull/1/head  # base_edifact
-
-./src/OCA/edi-framework:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/edi-framework
-        trobz: git@github.com:trobz/edi-framework.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA 810c10fb629ed65b8e170aa217d26a6eb5d046de  # edi_purchase_edifact_oca
-        - trobz refs/pull/1/head  # edi_purchase_diapar_oca
-
-./src/OCA/social:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/social
-        trobz: git@github.com:trobz/social.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/calendar:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/calendar
-        trobz: git@github.com:trobz/calendar.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/crm:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/crm
-        trobz: git@github.com:trobz/crm.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/hr:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/hr
-        trobz: git@github.com:trobz/hr.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/project:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/project
-        trobz: git@github.com:trobz/project.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/project-reporting:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/project-reporting
-        trobz: git@github.com:trobz/project-reporting.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/timesheet:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/timesheet
-        trobz: git@github.com:trobz/timesheet.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        
-./src/OCA/pos:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/pos
-        trobz: git@github.com:trobz/pos.git
-        P-H-Phuc: git@github.com:P-H-Phuc/pos.git
-        chien: git@github.com:nguyenminhchien/pos.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/1406/head  # pos_price_to_weight
-        - OCA refs/pull/1412/head  # pos_empty_home
-        - OCA refs/pull/1413/head  # pos_customer_required
-        - OCA refs/pull/1428/head  # pos_quick_logout
-        - OCA refs/pull/1445/head  # pos_order_report
-        - OCA refs/pull/1459/head  # pos_transfer_account
-        - OCA refs/pull/1460/head  # pos_ticket_send_by_mail
-        - OCA refs/pull/1473/head  # pos_order_return
-        - OCA refs/pull/1475/head  # pos_payment_terminal_return
-        - OCA 564c8046c9aadf1a9bcca86f80dc4129b1dfadb2  # pos_order_return_scrap to fix conflict
-        - OCA refs/pull/1477/head  # pos_automatic_validation
-        - OCA refs/pull/1480/head  # pos_access_right
-        - OCA refs/pull/1485/head  # pos_automatic_cashdrawer
-        - chien 14f8c3de9af86cbdd4e984671dc9d8eebac891ab # pos_payment_change_account
-        - chien refs/pull/13/head  # pos_payment_credit
-        - P-H-Phuc 8485256c3a35e897eea5402dc60ad9fe07110a05  # pos_report_session_summary_account
-        - P-H-Phuc refs/pull/15/head # pos_meal_voucher
-        - P-H-Phuc refs/pull/17/head # pos_require_product_quantity
-
-./src/OCA/event:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/event
-        trobz: git@github.com:trobz/event.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/server-ux:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/server-ux
-        trobz: git@github.com:trobz/server-ux.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
+#         - OCA refs/pull/3213/head  # web_widget_image_webcam
 
 # ./src/OCA/server-tools:
 #     defaults:
 #         depth: 300
 #     remotes:
-#         OCA: git@github.com:OCA/server-tools
+#         OCA: https://github.com/OCA/server-tools
 #         trobz: git@github.com:trobz/server-tools.git
 #     target: trobz merge-branch-foodcoop-18.0
 #     merges:
 #         - OCA 18.0
 
-./src/OCA/server-auth:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/server-auth
-        trobz: git@github.com:trobz/server-auth.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/server-backend:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/server-backend
-        trobz: git@github.com:trobz/server-backend.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/reporting-engine:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/reporting-engine
-        trobz: git@github.com:trobz/reporting-engine.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/account-invoicing:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/account-invoicing
-        trobz: git@github.com:trobz/account-invoicing.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/2129/head # account_invoice_refund_option
-        - OCA refs/pull/2112/head # account_partner_journal
-        - OCA refs/pull/2158/head # partner_account_move_line
-
-./src/OCA/account-invoice-reporting:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/account-invoice-reporting
-        trobz: git@github.com:trobz/account-invoice-reporting.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/account-financial-reporting:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/account-financial-reporting
-        trobz: git@github.com:trobz/account-financial-reporting.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/account-financial-tools:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/account-financial-tools
-        trobz: git@github.com:trobz/account-financial-tools.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/2150/head # account_asset_management_xlsx
-
-./src/OCA/account-analytic:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/account-analytic
-        trobz: git@github.com:trobz/account-analytic.git
-        P-H-Phuc: git@github.com:P-H-Phuc/account-analytic.git
-        chien: git@github.com:nguyenminhchien/account-analytic.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - P-H-Phuc 1b94756d08ad6a8e78426fcbbc7af305b83a8dd2 # product_analytic: Analytic Distribution Model in product.template
-        - chien refs/pull/2/head # product_analytic_pos
-
-./src/OCA/account-payment:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/account-payment
-        trobz: git@github.com:trobz/account-payment.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/911/head # account_payment_select_account
-        - OCA refs/pull/889/head # account_payment_term_restricted
+# ./src/OCA/product-attribute:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/product-attribute
+#         trobz: git@github.com:trobz/product-attribute.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/2143/head  # product_to_scale_bizerba
         
-./src/OCA/account-reconcile:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/account-reconcile
-        trobz: git@github.com:trobz/account-reconcile.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/922/head # account_bank_statement_reconcile_option
-        - OCA refs/pull/969/head # account_mass_reconcile
+# ./src/OCA/product-variant:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/product-variant
+#         trobz: git@github.com:trobz/product-variant.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+        
+# ./src/OCA/partner-contact:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/partner-contact
+#         trobz: git@github.com:trobz/partner-contact.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
 
-./src/OCA/account-fiscal-rule:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/account-fiscal-rule
-        trobz: git@github.com:trobz/account-fiscal-rule.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/546/head # account_product_fiscal_classification
+# ./src/OCA/sale-workflow:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/sale-workflow
+#         trobz: git@github.com:trobz/sale-workflow.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
 
-./src/OCA/currency:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/currency
-        trobz: git@github.com:trobz/currency.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
+# ./src/OCA/sale-reporting:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/sale-reporting
+#         trobz: git@github.com:trobz/sale-reporting.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
 
-./src/OCA/mis-builder:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/mis-builder
-        trobz: git@github.com:trobz/mis-builder.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
+# ./src/OCA/purchase-workflow:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/purchase-workflow
+#         trobz: git@github.com:trobz/purchase-workflow.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/2892/head  # purchase_package_qty
+#         - OCA 29ef008153499ae2f19ea27936ffb8f25b94fc5a  # purchase_compute_order
+#         - OCA e3388c6ce28874fc4a93853a80b9d0e4cebbeb6e  # purchase_compute_order_min_package
 
-./src/OCA/bank-statement-import:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/bank-statement-import
-        trobz: git@github.com:trobz/bank-statement-import.git
-        phuc: git@github.com:P-H-Phuc/bank-statement-import.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/836/head # bank_statement_import_caisse_epargne
-        - phuc refs/pull/3/head # bank_statement_import_caisse_epargne: improve version D field mapping
+# ./src/OCA/purchase-reporting:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/purchase-reporting
+#         trobz: git@github.com:trobz/purchase-reporting.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# # ./src/OCA/web:
+# #     defaults:
+# #         depth: 300
+# #     remotes:
+# #         OCA: git@github.com:OCA/web
+# #         trobz: git@github.com:trobz/web.git
+# #     target: trobz merge-branch-foodcoop-18.0
+# #     merges:
+# #         - OCA 18.0
+
+# # ./src/OCA/website:
+# #     defaults:
+# #         depth: 300
+# #     remotes:
+# #         OCA: git@github.com:OCA/website
+# #         trobz: git@github.com:trobz/web.git
+# #     target: trobz merge-branch-foodcoop-18.0
+# #     merges:
+# #         - OCA 18.0
+
+# ./src/OCA/website-themes:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/website-themes
+#         trobz: git@github.com:trobz/website-themes.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/e-commerce:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/e-commerce
+#         trobz: git@github.com:trobz/e-commerce.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/edi:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/edi
+#         trobz: git@github.com:trobz/edi.git
+#         phuc: git@github.com:P-H-Phuc/edi.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - phuc refs/pull/1/head  # base_edifact
+
+# ./src/OCA/edi-framework:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/edi-framework
+#         trobz: git@github.com:trobz/edi-framework.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA 810c10fb629ed65b8e170aa217d26a6eb5d046de  # edi_purchase_edifact_oca
+#         - trobz refs/pull/1/head  # edi_purchase_diapar_oca
+
+# ./src/OCA/social:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/social
+#         trobz: git@github.com:trobz/social.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/calendar:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/calendar
+#         trobz: git@github.com:trobz/calendar.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/crm:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/crm
+#         trobz: git@github.com:trobz/crm.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/hr:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/hr
+#         trobz: git@github.com:trobz/hr.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/project:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/project
+#         trobz: git@github.com:trobz/project.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/project-reporting:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/project-reporting
+#         trobz: git@github.com:trobz/project-reporting.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/timesheet:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/timesheet
+#         trobz: git@github.com:trobz/timesheet.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+        
+# ./src/OCA/pos:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/pos
+#         trobz: git@github.com:trobz/pos.git
+#         P-H-Phuc: git@github.com:P-H-Phuc/pos.git
+#         chien: git@github.com:nguyenminhchien/pos.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/1406/head  # pos_price_to_weight
+#         - OCA refs/pull/1412/head  # pos_empty_home
+#         - OCA refs/pull/1413/head  # pos_customer_required
+#         - OCA refs/pull/1428/head  # pos_quick_logout
+#         - OCA refs/pull/1445/head  # pos_order_report
+#         - OCA refs/pull/1459/head  # pos_transfer_account
+#         - OCA refs/pull/1460/head  # pos_ticket_send_by_mail
+#         - OCA refs/pull/1473/head  # pos_order_return
+#         - OCA refs/pull/1475/head  # pos_payment_terminal_return
+#         - OCA 564c8046c9aadf1a9bcca86f80dc4129b1dfadb2  # pos_order_return_scrap to fix conflict
+#         - OCA refs/pull/1477/head  # pos_automatic_validation
+#         - OCA refs/pull/1480/head  # pos_access_right
+#         - OCA refs/pull/1485/head  # pos_automatic_cashdrawer
+#         - chien 14f8c3de9af86cbdd4e984671dc9d8eebac891ab # pos_payment_change_account
+#         - chien refs/pull/13/head  # pos_payment_credit
+#         - P-H-Phuc 8485256c3a35e897eea5402dc60ad9fe07110a05  # pos_report_session_summary_account
+#         - P-H-Phuc refs/pull/15/head # pos_meal_voucher
+#         - P-H-Phuc refs/pull/17/head # pos_require_product_quantity
+
+# ./src/OCA/event:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/event
+#         trobz: git@github.com:trobz/event.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/server-ux:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/server-ux
+#         trobz: git@github.com:trobz/server-ux.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# # ./src/OCA/server-tools:
+# #     defaults:
+# #         depth: 300
+# #     remotes:
+# #         OCA: git@github.com:OCA/server-tools
+# #         trobz: git@github.com:trobz/server-tools.git
+# #     target: trobz merge-branch-foodcoop-18.0
+# #     merges:
+# #         - OCA 18.0
+
+# ./src/OCA/server-auth:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/server-auth
+#         trobz: git@github.com:trobz/server-auth.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/server-backend:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/server-backend
+#         trobz: git@github.com:trobz/server-backend.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/reporting-engine:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/reporting-engine
+#         trobz: git@github.com:trobz/reporting-engine.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/account-invoicing:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/account-invoicing
+#         trobz: git@github.com:trobz/account-invoicing.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/2129/head # account_invoice_refund_option
+#         - OCA refs/pull/2112/head # account_partner_journal
+#         - OCA refs/pull/2158/head # partner_account_move_line
+
+# ./src/OCA/account-invoice-reporting:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/account-invoice-reporting
+#         trobz: git@github.com:trobz/account-invoice-reporting.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/account-financial-reporting:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/account-financial-reporting
+#         trobz: git@github.com:trobz/account-financial-reporting.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/account-financial-tools:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/account-financial-tools
+#         trobz: git@github.com:trobz/account-financial-tools.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/2150/head # account_asset_management_xlsx
+
+# ./src/OCA/account-analytic:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/account-analytic
+#         trobz: git@github.com:trobz/account-analytic.git
+#         P-H-Phuc: git@github.com:P-H-Phuc/account-analytic.git
+#         chien: git@github.com:nguyenminhchien/account-analytic.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - P-H-Phuc 1b94756d08ad6a8e78426fcbbc7af305b83a8dd2 # product_analytic: Analytic Distribution Model in product.template
+#         - chien refs/pull/2/head # product_analytic_pos
+
+# ./src/OCA/account-payment:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/account-payment
+#         trobz: git@github.com:trobz/account-payment.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/911/head # account_payment_select_account
+#         - OCA refs/pull/889/head # account_payment_term_restricted
+        
+# ./src/OCA/account-reconcile:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/account-reconcile
+#         trobz: git@github.com:trobz/account-reconcile.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/922/head # account_bank_statement_reconcile_option
+#         - OCA refs/pull/969/head # account_mass_reconcile
+
+# ./src/OCA/account-fiscal-rule:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/account-fiscal-rule
+#         trobz: git@github.com:trobz/account-fiscal-rule.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/546/head # account_product_fiscal_classification
+
+# ./src/OCA/currency:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/currency
+#         trobz: git@github.com:trobz/currency.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/mis-builder:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/mis-builder
+#         trobz: git@github.com:trobz/mis-builder.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/bank-statement-import:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/bank-statement-import
+#         trobz: git@github.com:trobz/bank-statement-import.git
+#         phuc: git@github.com:P-H-Phuc/bank-statement-import.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/836/head # bank_statement_import_caisse_epargne
+#         - phuc refs/pull/3/head # bank_statement_import_caisse_epargne: improve version D field mapping
   
-./src/OCA/margin-analysis:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/margin-analysis
-        trobz: git@github.com:trobz/margin-analysis.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
+# ./src/OCA/margin-analysis:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/margin-analysis
+#         trobz: git@github.com:trobz/margin-analysis.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
    
-./src/OCA/community-data-files:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/community-data-files
-        trobz: git@github.com:trobz/community-data-files.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
+# ./src/OCA/community-data-files:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/community-data-files
+#         trobz: git@github.com:trobz/community-data-files.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
 
-./src/OCA/stock-logistics-workflow:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/stock-logistics-workflow
-        trobz: git@github.com:trobz/stock-logistics-workflow.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/2159/head  # stock_scrap_product_report
-        - OCA refs/pull/2186/head  # scrap_reason_mandatory
+# ./src/OCA/stock-logistics-workflow:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/stock-logistics-workflow
+#         trobz: git@github.com:trobz/stock-logistics-workflow.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/2159/head  # stock_scrap_product_report
+#         - OCA refs/pull/2186/head  # scrap_reason_mandatory
 
 ./src/OCA/stock-logistics-warehouse:
     defaults:
@@ -524,174 +524,174 @@
         - OCA refs/pull/2456/head  # product_history
         - OCA 162b1c03fb4ef8f75973c1bf1ca61d1b68458e3d  # product_history_for_cpo
 
-./src/OCA/stock-logistics-reporting:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/stock-logistics-reporting
-        trobz: git@github.com:trobz/stock-logistics-reporting.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/488/head  # stock_inventory_valuation_report
-
-./src/OCA/stock-logistics-barcode:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/stock-logistics-barcode
-        trobz: git@github.com:trobz/stock-logistics-barcode.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/735/head  # stock_inventory_barcode
-        - OCA refs/pull/694/head  # barcodes_generator_partner
-
-./src/OCA/storage:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/storage
-        trobz: git@github.com:trobz/storage.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/queue:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/queue
-        trobz: git@github.com:trobz/queue.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/connector:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/connector
-        trobz: git@github.com:trobz/connector.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/intrastat-extrastat:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/intrastat-extrastat
-        trobz: git@github.com:trobz/intrastat-extrastat.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/l10n-france:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/l10n-france
-        trobz: git@github.com:trobz/l10n-france.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/707/head # l10n_fr_fec_oca
-        - OCA refs/pull/688/head # l10n_fr_fec_group_sale_purchase
-        - OCA refs/pull/689/head # l10n_fr_fec_background
-
-./src/OCA/mail:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/mail
-        trobz: git@github.com:trobz/mail.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-        - OCA refs/pull/95/head  # mass_mailing_access
-        - OCA refs/pull/97/head  # mail_template_conditional_attachment
-
-./src/OCA/mass-mailing:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/mass-mailing
-        trobz: git@github.com:trobz/mass-mailing
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-# ./src/addons/druidoo-addons:
+# ./src/OCA/stock-logistics-reporting:
 #     defaults:
 #         depth: 300
 #     remotes:
-#         OCA: git@github.com:druidoo/druidoo-addons
-#         trobz: git@github.com:trobz/druidoo-addons.git
+#         OCA: git@github.com:OCA/stock-logistics-reporting
+#         trobz: git@github.com:trobz/stock-logistics-reporting.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/488/head  # stock_inventory_valuation_report
+
+# ./src/OCA/stock-logistics-barcode:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/stock-logistics-barcode
+#         trobz: git@github.com:trobz/stock-logistics-barcode.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/735/head  # stock_inventory_barcode
+#         - OCA refs/pull/694/head  # barcodes_generator_partner
+
+# ./src/OCA/storage:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/storage
+#         trobz: git@github.com:trobz/storage.git
 #     target: trobz merge-branch-foodcoop-18.0
 #     merges:
 #         - OCA 18.0
 
-# not found
-# ./src/addons/trobz-addons:
+# ./src/OCA/queue:
 #     defaults:
 #         depth: 300
 #     remotes:
-#         OCA: git@gitlab.trobz.com:odoo/addons-trobz
-#         trobz: git@github.com:trobz/addons-trobz.git
+#         OCA: git@github.com:OCA/queue
+#         trobz: git@github.com:trobz/queue.git
 #     target: trobz merge-branch-foodcoop-18.0
 #     merges:
 #         - OCA 18.0
 
-./src/OCA/report-print-send:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/report-print-send
-        trobz: git@github.com:trobz/report-print-send.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-./src/OCA/server-env:
-    defaults:
-        depth: 300
-    remotes:
-        OCA: git@github.com:OCA/server-env
-        trobz: git@github.com:trobz/server-env.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - OCA 18.0
-
-# ./src/addons/vracoop-addons:
+# ./src/OCA/connector:
 #     defaults:
 #         depth: 300
 #     remotes:
-#         OCA: git@github.com:coopiteasy/cie-pos
-#         trobz: git@github.com:trobz/cie-pos.git
+#         OCA: git@github.com:OCA/connector
+#         trobz: git@github.com:trobz/connector.git
 #     target: trobz merge-branch-foodcoop-18.0
 #     merges:
 #         - OCA 18.0
+
+# ./src/OCA/intrastat-extrastat:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/intrastat-extrastat
+#         trobz: git@github.com:trobz/intrastat-extrastat.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/l10n-france:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/l10n-france
+#         trobz: git@github.com:trobz/l10n-france.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/707/head # l10n_fr_fec_oca
+#         - OCA refs/pull/688/head # l10n_fr_fec_group_sale_purchase
+#         - OCA refs/pull/689/head # l10n_fr_fec_background
+
+# ./src/OCA/mail:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/mail
+#         trobz: git@github.com:trobz/mail.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+#         - OCA refs/pull/95/head  # mass_mailing_access
+#         - OCA refs/pull/97/head  # mail_template_conditional_attachment
+
+# ./src/OCA/mass-mailing:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/mass-mailing
+#         trobz: git@github.com:trobz/mass-mailing
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# # ./src/addons/druidoo-addons:
+# #     defaults:
+# #         depth: 300
+# #     remotes:
+# #         OCA: git@github.com:druidoo/druidoo-addons
+# #         trobz: git@github.com:trobz/druidoo-addons.git
+# #     target: trobz merge-branch-foodcoop-18.0
+# #     merges:
+# #         - OCA 18.0
+
+# # not found
+# # ./src/addons/trobz-addons:
+# #     defaults:
+# #         depth: 300
+# #     remotes:
+# #         OCA: git@gitlab.trobz.com:odoo/addons-trobz
+# #         trobz: git@github.com:trobz/addons-trobz.git
+# #     target: trobz merge-branch-foodcoop-18.0
+# #     merges:
+# #         - OCA 18.0
+
+# ./src/OCA/report-print-send:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/report-print-send
+#         trobz: git@github.com:trobz/report-print-send.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# ./src/OCA/server-env:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         OCA: git@github.com:OCA/server-env
+#         trobz: git@github.com:trobz/server-env.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - OCA 18.0
+
+# # ./src/addons/vracoop-addons:
+# #     defaults:
+# #         depth: 300
+# #     remotes:
+# #         OCA: git@github.com:coopiteasy/cie-pos
+# #         trobz: git@github.com:trobz/cie-pos.git
+# #     target: trobz merge-branch-foodcoop-18.0
+# #     merges:
+# #         - OCA 18.0
         
-# ./src/addons/novacode-addons:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@github.com:novacode-nl/odoo-formio
-#         trobz: git@github.com:trobz/odoo-formio.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
+# # ./src/addons/novacode-addons:
+# #     defaults:
+# #         depth: 300
+# #     remotes:
+# #         OCA: git@github.com:novacode-nl/odoo-formio
+# #         trobz: git@github.com:trobz/odoo-formio.git
+# #     target: trobz merge-branch-foodcoop-18.0
+# #     merges:
+# #         - OCA 18.0
 
-# ./src/addons/otsokop-addons:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@gitlab.trobz.com:odoo-restricted/otsokop
-#         trobz: git@github.com:trobz/otsokop.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
+# # ./src/addons/otsokop-addons:
+# #     defaults:
+# #         depth: 300
+# #     remotes:
+# #         OCA: git@gitlab.trobz.com:odoo-restricted/otsokop
+# #         trobz: git@github.com:trobz/otsokop.git
+# #     target: trobz merge-branch-foodcoop-18.0
+# #     merges:
+# #         - OCA 18.0
 
 ./src/others/foodcoop-project-addon:
     defaults:
@@ -711,22 +711,22 @@
     merges:
         - trobz 18.0_dev
 
-./src/others/odoomates:
-    defaults:
-        depth: 300
-    remotes:
-        odoomates: git@github.com:odoomates/odooapps.git
-        trobz: git@github.com:trobz/odoomates.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - odoomates 18.0
+# ./src/others/odoomates:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         odoomates: git@github.com:odoomates/odooapps.git
+#         trobz: git@github.com:trobz/odoomates.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - odoomates 18.0
 
-./src/others/akretion:
-    defaults:
-        depth: 300
-    remotes:
-        akretion: git@github.com:akretion/fr-einvoicing.git
-        trobz: git@github.com:trobz/fr-einvoicing.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - akretion 18.0
+# ./src/others/akretion:
+#     defaults:
+#         depth: 300
+#     remotes:
+#         akretion: git@github.com:akretion/fr-einvoicing.git
+#         trobz: git@github.com:trobz/fr-einvoicing.git
+#     target: trobz merge-branch-foodcoop-18.0
+#     merges:
+#         - akretion 18.0
