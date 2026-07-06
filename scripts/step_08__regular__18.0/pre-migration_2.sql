@@ -17,3 +17,27 @@ WHERE bridge.name = 'coop_shift_website_event'
       WHERE dep.name = 'website_event'
         AND dep.state = 'installed'
   );
+
+-- Force-install # coop_stock_repair only if its base dependency is present.
+UPDATE ir_module_module AS bridge
+SET state = 'installed'
+WHERE bridge.name = 'coop_stock_repair'
+  AND EXISTS (
+      SELECT 1
+      FROM ir_module_module AS dep
+      WHERE dep.name = 'repair'
+        AND dep.state = 'installed'
+  );
+
+-- Force-install # website_coop_custom only if its base dependency is present.
+UPDATE ir_module_module AS bridge
+SET state = 'installed'
+WHERE bridge.name = 'website_coop_custom'
+  AND EXISTS (
+      SELECT 1
+      FROM ir_module_module AS dep
+      WHERE dep.name = 'website_sale'
+        AND dep.state = 'installed'
+  );
+
+  
