@@ -40,4 +40,21 @@ WHERE bridge.name = 'website_coop_custom'
         AND dep.state = 'installed'
   );
 
+-- Force-install # pos_data_role only when both dependencies are installed.
+UPDATE ir_module_module AS bridge
+SET state = 'installed'
+WHERE bridge.name = 'pos_data_role'
+  AND EXISTS (
+      SELECT 1
+      FROM ir_module_module AS dep
+      WHERE dep.name = 'foodcoop_data_role'
+        AND dep.state = 'installed'
+  )
+  AND EXISTS (
+      SELECT 1
+      FROM ir_module_module AS dep
+      WHERE dep.name = 'pos_automatic_cashdrawer_cashlogy'
+        AND dep.state = 'installed'
+  );
+
   
