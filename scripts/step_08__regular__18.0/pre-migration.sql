@@ -219,13 +219,17 @@ END $$;
 UPDATE ir_module_module
 SET state = 'installed'
 WHERE name IN (
-    'pos_order_remove_line',
-    'spreadsheet_dashboard', -- depends on coop_membershift
-    'web_chatter_position',
-    'coop_web',
     'coop_pos_access',
     'coop_pos_return',
-    'coop_pos_search'
+    'coop_pos_search',
+    'coop_sale',
+    'coop_web',
+    'pos_order_remove_line',
+    'server_environment_ir_config_parameter',
+    'spreadsheet_dashboard', -- depends on coop_membershift
+    'web_chatter_position',
+    'web_no_bubble',
+    'web_responsive'
 );
 
 UPDATE ir_module_module AS imm
