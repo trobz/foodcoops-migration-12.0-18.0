@@ -11,29 +11,19 @@ if env is None:
 
 
 def remove_partner_email_check_validate_mail_view(env):
-    # Remove only the orphaned view with key
-    # partner_email_check.view_base_config_settings_validate_mail.
-    candidate_views = env["ir.ui.view"].search([
-        ("key", "=", "partner_email_check.view_base_config_settings_validate_mail"),
-    ])
-    removed_count = 0
-    skipped_count = 0
-
-    for view in candidate_views:
+    # Remove view by XML ID
+    view = env.ref("partner_email_check.view_base_config_settings_validate_mail", raise_if_not_found=False)
+    if view:
         _logger.info(
-            "Removing orphan view with key %s (%s).",
-            view.key,
+            "Removing view by XML ID partner_email_check.view_base_config_settings_validate_mail (res_id: %s).",
             view.id,
         )
         view.unlink()
-        removed_count += 1
-
-    _logger.info(
-        "Processed %d candidate views for key partner_email_check.view_base_config_settings_validate_mail: %d removed, %d skipped.",
-        len(candidate_views),
-        removed_count,
-        skipped_count,
-    )
+        _logger.info("View successfully removed.")
+    else:
+        _logger.info(
+            "View with XML ID partner_email_check.view_base_config_settings_validate_mail not found, skipping."
+        )
 
 
 remove_partner_email_check_validate_mail_view(env=env)
