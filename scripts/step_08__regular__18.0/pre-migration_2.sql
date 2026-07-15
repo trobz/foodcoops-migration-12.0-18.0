@@ -57,4 +57,14 @@ WHERE bridge.name = 'pos_data_role'
         AND dep.state = 'installed'
   );
 
-  
+-- Force-install # edi_purchase_diapar_oca if edi_purchase_diapar is installed.
+UPDATE ir_module_module AS bridge
+SET state = 'installed'
+WHERE bridge.name = 'edi_purchase_diapar_oca'
+  AND EXISTS (
+      SELECT 1
+      FROM ir_module_module AS dep
+      WHERE dep.name = 'edi_purchase_diapar'
+        AND dep.state = 'installed'
+  );
+
