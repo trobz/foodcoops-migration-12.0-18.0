@@ -37,8 +37,8 @@ def deactivate_manual_menu(env):
             # unlink the menu if the action model is board.board
             if menu.action.res_model == "board.board":
                 _logger.info("Unlinked manual menu %s (%s) with action model board.board.", menu.name, menu.id)
-                menu.unlink()
                 menu.action.unlink()
+                menu.unlink()
                 fixed_count += 1
                 continue
 
