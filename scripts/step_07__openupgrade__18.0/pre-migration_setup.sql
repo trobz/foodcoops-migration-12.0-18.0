@@ -93,3 +93,16 @@ WHERE module = 'pos_automatic_cashdrawer';
 UPDATE ir_model_data
 SET name = 'module_pos_automatic_cashdrawer_cashlogy'
 WHERE name = 'module_pos_automatic_cashdrawer';
+
+-- Rename pos_deposit to pos_container_deposit
+UPDATE ir_module_module
+SET name = 'pos_container_deposit'
+WHERE name = 'pos_deposit';
+
+UPDATE ir_model_data
+SET module = 'pos_container_deposit'
+WHERE module = 'pos_deposit';
+
+UPDATE ir_model_data
+SET name = 'module_pos_container_deposit'
+WHERE name = 'module_pos_deposit';

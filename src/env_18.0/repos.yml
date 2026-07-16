@@ -271,6 +271,7 @@
         trobz: git@github.com:trobz/pos.git
         P-H-Phuc: git@github.com:P-H-Phuc/pos.git
         chien: git@github.com:nguyenminhchien/pos.git
+        khoi: git@github.com:Kimkhoi3010/pos.git
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
@@ -293,6 +294,7 @@
         - P-H-Phuc 8485256c3a35e897eea5402dc60ad9fe07110a05  # pos_report_session_summary_account
         - P-H-Phuc refs/pull/15/head # pos_meal_voucher
         - P-H-Phuc refs/pull/17/head # pos_require_product_quantity
+        - khoi refs/pull/3/head # pos_container_deposit
 
 ./src/OCA/event:
     defaults:
