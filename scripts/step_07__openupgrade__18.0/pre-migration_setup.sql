@@ -99,6 +99,16 @@ UPDATE ir_module_module
 SET name = 'pos_container_deposit'
 WHERE name = 'pos_deposit';
 
+-- If pos_container_deposit already exists, update its state to 'installed' if pos_deposit was installed or to be upgraded
+UPDATE ir_module_module
+SET state = 'installed'
+WHERE name = 'pos_container_deposit'
+  AND EXISTS (
+    SELECT 1 FROM ir_module_module
+    WHERE name = 'pos_deposit'
+      AND state IN ('installed', 'to upgrade')
+  );
+
 UPDATE ir_model_data
 SET module = 'pos_container_deposit'
 WHERE module = 'pos_deposit';
