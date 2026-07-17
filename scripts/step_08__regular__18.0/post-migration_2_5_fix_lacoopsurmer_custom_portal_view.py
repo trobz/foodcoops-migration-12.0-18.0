@@ -92,6 +92,26 @@ def fix_lacoopsurmer_custom_portal_view(env):
     _logger.info("Successfully updated view without xmlid (ID=%d)", view_without_xmlid.id)
 
 
+def remove_pos_order_line_removal_view(env):
+    """Remove the view with xmlid pos_order_line_removal.view_pos_config_form_inherit"""
+    try:
+        view = env.ref("pos_order_line_removal.view_pos_config_form_inherit", raise_if_not_found=False)
+        if view:
+            view.unlink()
+            _logger.info(
+                "Successfully removed view with xmlid: pos_order_line_removal.view_pos_config_form_inherit"
+            )
+        else:
+            _logger.info(
+                "View with xmlid pos_order_line_removal.view_pos_config_form_inherit not found"
+            )
+    except Exception as e:
+        _logger.error(
+            "Failed to remove view with xmlid pos_order_line_removal.view_pos_config_form_inherit: %s",
+            str(e),
+        )
+
 fix_lacoopsurmer_custom_portal_view(env)
+remove_pos_order_line_removal_view(env)
 env.cr.commit()
 _logger.info("Successfully completed post-migration_2_5_fix_lacoopsurmer_custom_portal_view.py")
