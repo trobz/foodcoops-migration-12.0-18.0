@@ -275,7 +275,6 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-        - OCA refs/pull/1295/head  # pos_order_new_line
         - OCA refs/pull/1406/head  # pos_price_to_weight
         - OCA refs/pull/1412/head  # pos_empty_home
         - OCA refs/pull/1413/head  # pos_customer_required
@@ -295,6 +294,7 @@
         - P-H-Phuc refs/pull/15/head # pos_meal_voucher
         - P-H-Phuc refs/pull/17/head # pos_require_product_quantity
         - khoi refs/pull/3/head # pos_container_deposit
+        - chien refs/pull/17/head  # pos_order_new_line MIG + UPD
 
 ./src/OCA/event:
     defaults:
