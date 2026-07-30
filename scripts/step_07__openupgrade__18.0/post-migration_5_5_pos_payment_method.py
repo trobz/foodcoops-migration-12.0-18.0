@@ -194,6 +194,29 @@ def migrate_auto_apply_credit_amount(env):
     # """)
     # _logger.info("Removed oca_auto_apply_credit_amount column from pos_config")
 
+
+def migrate_oca_payment_terminal_for_card_mode(env):
+    """
+    Set payment_method_type = 'terminal' and use_payment_terminal = 'oca_payment_terminal'
+    for payment methods with card terminal mode that have not been configured yet.
+    Skipped if oca_payment_terminal_mode doesn't exist (pos_payment_terminal not installed).
+    """
+    if not _column_exists(env, 'pos_payment_method', 'oca_payment_terminal_mode'):
+        _logger.info("Column oca_payment_terminal_mode not found in pos_payment_method, skipping migrate_oca_payment_terminal_for_card_mode")
+        return
+
+    _logger.info("Setting payment terminal fields for card terminal payment methods")
+    env.cr.execute("""
+        UPDATE pos_payment_method
+        SET payment_method_type = 'terminal',
+            use_payment_terminal = 'oca_payment_terminal'
+        WHERE oca_payment_terminal_mode = 'card'
+            AND payment_method_type = 'none'
+            AND oca_payment_terminal_mode IS NOT NULL
+    """)
+    _logger.info(f"Updated payment terminal fields for {env.cr.rowcount} card terminal payment methods")
+
+
 _logger.info("Executing post-post-migration_5_5_pos_payment_method.py script ...")
 
 env = env  # noqa: F821
@@ -203,6 +226,7 @@ migrate_column_from_journal_to_payment_method(env, "oca_payment_terminal_mode", 
 migrate_column_from_journal_to_payment_method(env, "oca_iface_automatic_cashdrawer", "iface_automatic_cashdrawer")
 
 migrate_fast_payment_for_card_terminals(env)
+migrate_oca_payment_terminal_for_card_mode(env)
 migrate_oca_payment_terminal_return(env)
 migrate_change_account_id(env)
 migrate_credit_terminal_settings(env)
