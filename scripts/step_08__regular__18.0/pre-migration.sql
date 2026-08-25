@@ -229,7 +229,8 @@ WHERE name IN (
     'spreadsheet_dashboard', -- depends on coop_membershift
     'web_chatter_position',
     'web_no_bubble',
-    'web_responsive'
+    'web_responsive',
+    'pos_session_unicity_management'
 );
 
 UPDATE ir_module_module AS imm

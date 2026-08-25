@@ -296,6 +296,7 @@
         - P-H-Phuc refs/pull/17/head # pos_require_product_quantity
         - khoi refs/pull/3/head # pos_container_deposit
         - chien refs/pull/17/head  # pos_order_new_line MIG + UPD
+        - OCA refs/pull/1605/head  # pos_session_unicity_management
 
 ./src/OCA/event:
     defaults:
