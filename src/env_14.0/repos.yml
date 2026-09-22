@@ -7,11 +7,11 @@
     #     depth: 300
     remotes:
         odoo: https://github.com/odoo/odoo
-        trobz: git@gitlab.trobz.com:odoo/odoo.git
+        trobz: git@github.com:trobz/odoo.git
     target: trobz 14.0-target
     merges:
         - odoo 14.0
-        - trobz refs/merge-requests/32/head
+        - trobz refs/pull/4/head
 
 ##############################################################################
 ## OpenUpgrade Repository
@@ -491,42 +491,6 @@
     merges:
         - OCA 14.0
 
-# ./src/addons/foodcoop-addons:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@gitlab.trobz.com:odoo/lalouve-production
-#     target: OCA 14.0-target
-#     merges:
-#         - OCA 14.0
-
-# ./src/addons/druidoo-addons:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@github.com:druidoo/druidoo-addons
-#     target: OCA 14.0-target
-#     merges:
-#         - OCA 14.0
-
-./src/addons/trobz-addons:
-    defaults:
-        depth: 1
-    remotes:
-        OCA: git@gitlab.trobz.com:odoo/addons-trobz
-    target: OCA 14.0-target
-    merges:
-        - OCA 14.0-trobz
-
-# ./src/odoo:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@gitlab.trobz.com:odoo/odoo
-#     target: OCA 14.0-target
-#     merges:
-#         - OCA 14.0
-
 ./src/OCA/report-print-send:
     defaults:
         depth: 1
@@ -544,30 +508,3 @@
     target: OCA 14.0-target
     merges:
         - OCA 14.0
-
-# ./src/addons/vracoop-addons:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@github.com:coopiteasy/cie-pos
-#     target: OCA 14.0-target
-#     merges:
-#         - OCA 14.0
-        
-# ./src/addons/novacode-addons:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@github.com:novacode-nl/odoo-formio
-#     target: OCA 14.0-target
-#     merges:
-#         - OCA 14.0
-
-# ./src/addons/otsokop-addons:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@gitlab.trobz.com:odoo-restricted/otsokop
-#     target: OCA 14.0-target
-#     merges:
-#         - OCA 14.0

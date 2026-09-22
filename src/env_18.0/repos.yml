@@ -7,11 +7,11 @@
         depth: 300
     remotes:
         odoo: https://github.com/odoo/odoo
-        trobz: git@gitlab.trobz.com:odoo/odoo.git
+        trobz: git@github.com:trobz/odoo.git
     target: trobz 18.0-target
     merges:
         - odoo 18.0
-        - trobz refs/merge-requests/33/head
+        - trobz refs/pull/3/head
 
 ##############################################################################
 ## OpenUpgrade Repository
@@ -23,12 +23,10 @@
     remotes:
         OCA: https://github.com/OCA/OpenUpgrade
         trobz: git@github.com:trobz/OpenUpgrade.git
-        trobz_gitlab: git@gitlab.trobz.com:odoo/openupgrade.git
-    target: trobz_gitlab merge-branch-foodcoop-18.0
+    target: trobz merge-branch-foodcoop-18.0
     merges:
         - trobz 18.0
         - trobz refs/pull/4/head
-        - trobz_gitlab refs/merge-requests/1/head
 
 ##############################################################################
 ## OCA Repositories
@@ -128,26 +126,6 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-
-# ./src/OCA/web:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@github.com:OCA/web
-#         trobz: git@github.com:trobz/web.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
-
-# ./src/OCA/website:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@github.com:OCA/website
-#         trobz: git@github.com:trobz/web.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
 
 ./src/OCA/website-themes:
     defaults:
@@ -317,16 +295,6 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-
-# ./src/OCA/server-tools:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@github.com:OCA/server-tools
-#         trobz: git@github.com:trobz/server-tools.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
 
 ./src/OCA/server-auth:
     defaults:
@@ -626,27 +594,6 @@
     merges:
         - OCA 18.0
 
-# ./src/addons/druidoo-addons:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@github.com:druidoo/druidoo-addons
-#         trobz: git@github.com:trobz/druidoo-addons.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
-
-# not found
-# ./src/addons/trobz-addons:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@gitlab.trobz.com:odoo/addons-trobz
-#         trobz: git@github.com:trobz/addons-trobz.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
-
 ./src/OCA/report-print-send:
     defaults:
         depth: 300
@@ -666,36 +613,6 @@
     target: trobz merge-branch-foodcoop-18.0
     merges:
         - OCA 18.0
-
-# ./src/addons/vracoop-addons:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@github.com:coopiteasy/cie-pos
-#         trobz: git@github.com:trobz/cie-pos.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
-        
-# ./src/addons/novacode-addons:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@github.com:novacode-nl/odoo-formio
-#         trobz: git@github.com:trobz/odoo-formio.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
-
-# ./src/addons/otsokop-addons:
-#     defaults:
-#         depth: 300
-#     remotes:
-#         OCA: git@gitlab.trobz.com:odoo-restricted/otsokop
-#         trobz: git@github.com:trobz/otsokop.git
-#     target: trobz merge-branch-foodcoop-18.0
-#     merges:
-#         - OCA 18.0
 
 ./src/others/foodcoop-project-addon:
     defaults:

@@ -110,24 +110,6 @@
     merges:
         - OCA 12.0
 
-# ./src/OCA/web:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@github.com:OCA/web
-#     target: OCA 12.0-target
-#     merges:
-#         - OCA 12.0
-
-# ./src/OCA/website:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@github.com:OCA/website
-#     target: OCA 12.0-target
-#     merges:
-#         - OCA 12.0
-
 ./src/OCA/website-themes:
     defaults:
         depth: 1
@@ -244,15 +226,6 @@
     target: OCA 12.0-target
     merges:
         - OCA 12.0
-
-# ./src/OCA/server-tools:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@github.com:OCA/server-tools
-#     target: OCA 12.0-target
-#     merges:
-#         - OCA 12.0
 
 ./src/OCA/server-auth:
     defaults:
@@ -483,10 +456,10 @@
     defaults:
         depth: 1
     remotes:
-        OCA: git@gitlab.trobz.com:odoo/lalouve-production
-    target: OCA 12.0-target
+        AwesomeFoodCoops: git@github.com:AwesomeFoodCoops/odoo-production.git
+    target: AwesomeFoodCoops 12.0-target
     merges:
-        - OCA 12.0
+        - AwesomeFoodCoops 12.0
 
 ./src/addons/druidoo-addons:
     defaults:
@@ -496,24 +469,6 @@
     target: OCA 12.0-target
     merges:
         - OCA 12.0
-
-./src/addons/trobz-addons:
-    defaults:
-        depth: 1
-    remotes:
-        OCA: git@gitlab.trobz.com:odoo/addons-trobz
-    target: OCA 12.0-target
-    merges:
-        - OCA 12.0-trobz
-
-# ./src/odoo:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@gitlab.trobz.com:odoo/odoo
-#     target: OCA 12.0-target
-#     merges:
-#         - OCA 12.0
 
 ./src/OCA/report-print-send:
     defaults:
@@ -532,30 +487,3 @@
     target: OCA 12.0-target
     merges:
         - OCA 12.0
-
-# ./src/addons/vracoop-addons:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@github.com:coopiteasy/cie-pos
-#     target: OCA 12.0-target
-#     merges:
-#         - OCA 12.0
-        
-# ./src/addons/novacode-addons:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@github.com:novacode-nl/odoo-formio
-#     target: OCA 12.0-target
-#     merges:
-#         - OCA 12.0
-
-# ./src/addons/otsokop-addons:
-#     defaults:
-#         depth: 1
-#     remotes:
-#         OCA: git@gitlab.trobz.com:odoo-restricted/otsokop
-#     target: OCA 12.0-target
-#     merges:
-#         - OCA 12.0
