@@ -614,15 +614,6 @@
     merges:
         - OCA 18.0
 
-./src/others/foodcoop-project-addon:
-    defaults:
-        depth: 300
-    remotes:
-        trobz: git@gitlab.trobz.com:project/foodcoop-project-addon.git
-    target: trobz merge-branch-foodcoop-18.0
-    merges:
-        - trobz 18.0
-
 ./src/others/foodcoop-addons:
     defaults:
         depth: 300
