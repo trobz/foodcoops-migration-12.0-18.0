@@ -7,7 +7,7 @@
   _This tool automates and assists with Odoo database migration between different versions._
 
 - **Fetch migration code for all needed Odoo versions**  
-  Clone this repo: `git clone git@gitlab.trobz.com:project/migration-foodcoop-12-18.git` 
+  Clone this repo: `git clone https://github.com/trobz/foodcoops-migration-12.0-18.0` 
   _This downloads the required migration scripts and code for each Odoo version in your migration path (from 12.0 to 18.0)._
 
 - **Pull the codebase**  
